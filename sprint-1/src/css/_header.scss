@@ -1,0 +1,104 @@
+
+  /* Default CSS styling for mobile 320px */
+    @media (min-width: 320px){
+    
+    /* Navigation styling */
+    .menu {
+        width: 100vw;
+        height: 80px;
+        @include row;
+        background-color: $black-color;
+
+        &__logo {
+            padding-left: 5%;
+        }
+
+        ul {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            list-style-type: none;
+            align-items: center;
+            
+            li {
+                flex:1 1 50%;
+                color: white;
+                padding-bottom: 6px;
+                text-align: center;
+            
+                &:first-child { // logo
+                    flex:1 1 100%;
+                    padding-bottom: 5%;
+                    padding-top: 10px;
+                }
+
+                &.selected { // active tab
+                    display: inline-block;
+                    position: relative;
+                }
+
+                &.selected:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    border-bottom: 4px solid white;
+                    margin-top: 19px;
+                }
+
+                &:hover { //hover interaction
+                    color: yellow;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+}
+
+  /* styling for tablet from 768px */
+    @media (min-width: 768px) {
+
+    /* Navigation styling */
+
+    .menu {                
+        justify-content: space-between;
+
+        ul {
+            flex-flow: row nowrap;
+            width: 60%;
+            height: 100%;
+
+            li {
+                margin-right: 48px;
+
+                &:first-child {
+                    margin-left: 24px;
+                    padding: 0;
+                }
+
+                &.selected:after {
+                    margin-top: 50px;        
+                }
+            }
+        }
+    }    
+    }
+  /* styling for desktop from 1440px */
+    @media (min-width: 1440px){
+    
+    .menu {    
+        ul {
+            width: 40%;
+            justify-content: space-between;
+
+            li:first-child {
+                margin-left: 180px;
+            }
+    
+            li:nth-child(2), li:last-child {
+                margin-right: 56px;
+            }
+        }
+    }
+}
