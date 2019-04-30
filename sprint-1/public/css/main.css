@@ -922,13 +922,263 @@ body {
 /* Default CSS styling for mobile 320px */
 @media (min-width: 320px) {
   /* Main content styling */
-  nav {
-    background-color: #323232;
+  #root .App {
+    width: 100%;
+    margin-left: 16px;
+    margin-right: 16px;
   }
-  h1 {
-    color: #ffffff;
+  #root .App .button {
+    background-color: #0095FF;
+  }
+  #root .App nav {
+    height: 169px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #root .App nav #searchBar {
+    background-color: #E1E1E1;
+    border-radius: 5%;
+    border: 1px solid #E1E1E1;
+    height: 20px;
+    margin-bottom: 8px;
+  }
+  #root .App nav .upload {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  #root .App nav .upload .button {
+    background-color: #0095FF;
+    margin-right: 16px;
+    height: 20px;
+  }
+  #root .App .hero {
+    margin-bottom: 32px;
+  }
+  #root .App .hero iframe {
+    width: 100%;
+    height: 183px;
+  }
+  #root .App .main .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 24px;
+  }
+  #root .App .main .title h1 {
+    text-align: left;
+    margin-bottom: 16px;
+  }
+  #root .App .main .title .author,
+  #root .App .main .title .stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  #root .App .main .title .author {
+    margin-bottom: 32px;
+  }
+  #root .App .main .title .author h2 {
+    margin-right: 8px;
+  }
+  #root .App .main .title .stats {
+    margin-bottom: 24px;
+    border-bottom: 1px solid #E1E1E1;
+  }
+  #root .App .main .title .stats p:first-child {
+    margin-right: 8px;
+  }
+  #root .App .main .description {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  #root .App .comment__title {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 32px;
+  }
+  #root .App .comments {
+    margin-top: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-left: 5%;
-    width: 80%;
+    margin-right: 5%;
+  }
+  #root .App .comments h4 {
+    text-transform: uppercase;
+    color: #E1E1E1;
+  }
+  #root .App .comments__form__input {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  #root .App .comments--icon {
+    margin-right: 5%;
+  }
+  #root .App .comments--icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-top: 25px;
+  }
+  #root .App .comments #myForm .formComment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #root .App--icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FAFAFA;
+  }
+  #root .App form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #root .App form textarea {
+    border: 2px #0095FF solid;
+    margin-bottom: 16px;
+    background-color: #FAFAFA;
+    border-radius: 6px;
+  }
+  #root .App form textareaplaceholder {
+    margin-top: 2%;
+  }
+  #root .App form button {
+    background-color: #0095FF;
+    color: white;
+    height: 48px;
+    width: 224px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    font-family: "Avenir Next";
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  #root .App form button:hover {
+    background-color: black;
+  }
+  #root .App .hidden {
+    display: none;
+  }
+  #root .App .comments-table {
+    width: 100vw;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  #root .App .comments-table .comments__published {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E1E1E1;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  #root .App .comments-table .comments__published .comments__img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 25%;
+  }
+  #root .App .comments-table .comments__published .comments__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 75%;
+  }
+  #root .App .comments-table .comments__published .comments__body .username,
+  #root .App .comments-table .comments__published .comments__body .date {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+  }
+  #root .App .comments-table .comments__published .comments__body .date {
+    text-align: right;
+    color: #E1E1E1;
+  }
+  #root .App .comments-table .comments__published .comments__body .username {
+    font-weight: bold;
+  }
+  #root .App .comments-table .comments__published .comments__body .input {
+    margin-top: 5%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+  #root .App--icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FAFAFA;
   }
 }
 
