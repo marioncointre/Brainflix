@@ -27,46 +27,75 @@ body {
 
   #root {
     .App {
-      width: 100%;
+      width: 100vw;
       margin-left: 16px;
       margin-right: 16px;
 
       .button {
         background-color: $brainflix-blue;
       }
+
       nav {
         height: 169px;
         display: flex;
         flex-direction: column;
 
-        #searchBar {
+        .logo {
+          height: 48px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .icon {
+          margin-right: 5%;
+
+          img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+          }
+        }
+
+        #searchBar input {
           background-color: $mercury-color;
           border-radius: 5%;
           border: 1px solid $mercury-color;
-          height: 20px;
+          height: 30px;
+          width: 90%;
           margin-bottom: 8px;
         }
 
         .upload {
           display: flex;
           flex-direction: row;
-          justify-content: center;
           width: 100%;
           margin-bottom: 16px;
+          align-items: center;
 
           .button {
             background-color: $brainflix-blue;
             margin-right: 16px;
-            height: 20px;
+            height: 50px;
+            width: 70%;
+            color: $primary-color;
+            font-weight: $font-bold;
+            border-radius: 4px;
+          }
+          .icon {
+            width: 20%;
           }
         }
       }
       .hero {
-        iframe {
-          width: 100%;
-          height: 183px;
-        }
+        width: 100%;
         margin-bottom: 32px;
+
+        &__video {
+          img {
+            height: 183px;
+          }
+        }
       }
 
       .main {
@@ -80,9 +109,12 @@ body {
             margin-bottom: 16px;
           }
           .author,
-          .stats {
+          .stats,
+          .views,
+          .likes {
             display: flex;
             flex-direction: row;
+            align-items: center;
           }
 
           .author {
@@ -93,10 +125,16 @@ body {
           }
 
           .stats {
-            margin-bottom: 24px;
+            padding-bottom: 24px;
             border-bottom: 1px solid $mercury-color;
-            p:first-child {
+
+            .views img,
+            .likes img {
               margin-right: 8px;
+            }
+
+            .views {
+              margin-right: 16px;
             }
           }
         }
@@ -124,159 +162,176 @@ body {
           text-transform: uppercase;
           color: $mercury-color;
         }
-
+        &__input {
+          h4 {
+            margin-bottom: 8px;
+          }
+        }
         &__form {
-          &__input {
-            justify-content: flex-start;
+          @include row;
+
+          &--icon {
+            margin-right: 5%;
+
+            img {
+              width: 48px;
+              height: 48px;
+              border-radius: 50%;
+              margin-top: 25px;
+            }
+          }
+
+          &--icon {
+            margin-right: 5%;
+
+            img {
+              width: 48px;
+              height: 48px;
+              border-radius: 50%;
+              margin-top: 25px;
+            }
+          }
+
+          #myForm {
+            .formComment {
+              display: flex;
+              flex-direction: column;
+            }
           }
         }
 
         &--icon {
-          margin-right: 5%;
-
-          img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            margin-top: 25px;
-          }
-        }
-
-        #myForm {
-          .formComment {
-            display: flex;
-            flex-direction: column;
-          }
-        }
-      }
-
-      &--icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: $lightgrey;
-      }
-
-      form {
-        @include column;
-
-        textarea {
-          border: 2px $brainflix-blue solid;
-          margin-bottom: 16px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
           background-color: $lightgrey;
-          border-radius: 6px;
-
-          &placeholder {
-            margin-top: 2%;
-          }
         }
 
-        button {
-          background-color: $brainflix-blue;
-          color: white;
-          height: 48px;
-          width: 224px;
-          align-self: flex-end;
-          margin-bottom: 24px;
-          border-radius: 4px;
-          font-family: "Avenir Next";
-          text-transform: uppercase;
-          font-weight: $font-bold;
+        form {
+          @include column;
 
-          &:hover {
-            background-color: black;
+          textarea {
+            border: 2px $brainflix-blue solid;
+            margin-bottom: 16px;
+            background-color: $lightgrey;
+            border-radius: 6px;
+
+            &placeholder {
+              margin-top: 2%;
+            }
+          }
+
+          button {
+            background-color: $brainflix-blue;
+            color: white;
+            height: 48px;
+            width: 224px;
+            align-self: flex-end;
+            margin-bottom: 24px;
+            border-radius: 4px;
+            font-family: "Avenir Next";
+            text-transform: uppercase;
+            font-weight: $font-bold;
+
+            &:hover {
+              background-color: black;
+            }
           }
         }
-      }
-      .hidden {
-        display: none;
-      }
+        .hidden {
+          display: none;
+        }
 
-      .comments-table {
-        width: 100vw;
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-bottom: 40px;
-
-        .comments__published {
-          @include row;
-          padding-top: 24px;
-          padding-bottom: 24px;
-          border-bottom: 1px solid $mercury-color;
+        .comments-table {
+          width: 100vw;
           margin-left: 5%;
           margin-right: 5%;
+          margin-bottom: 40px;
 
-          .comments__img {
-            @include column;
-            width: 25%;
-          }
-
-          .comments--icon {
-            display: flex;
-            flex-direction: column;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: $lightgrey;
-          }
-
-          .comments__body {
+          .comments__published {
             @include row;
-            align-items: center;
-            flex-wrap: wrap;
-            width: 75%;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid $mercury-color;
+            margin-left: 5%;
+            margin-right: 5%;
 
-            .username,
-            .date {
-              flex: 1 1 50%;
-            }
-            .date {
-              text-align: right;
-              color: $mercury-color;
-            }
-            .username {
-              font-weight: $font-bold;
+            .comments__img {
+              @include column;
+
+              .comments--icon {
+                display: flex;
+                flex-direction: column;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: $lightgrey;
+              }
             }
 
-            .input {
-              margin-top: 5%;
-              flex: 1 1 100%;
+            .comments__body {
+              @include row;
+              align-items: center;
+              flex-wrap: wrap;
+
+              .username,
+              .date {
+                flex: 1 1 50%;
+              }
+              .date {
+                text-align: right;
+                color: $mercury-color;
+              }
+              .username {
+                font-weight: $font-bold;
+              }
+
+              .input {
+                margin-top: 5%;
+                flex: 1 1 100%;
+              }
             }
           }
         }
-      }
-      title {
-        margin-bottom: 40px;
+
+        title {
+          margin-bottom: 40px;
+        }
       }
 
-      .video {
+      .aside {
         width: 100%;
         display: flex;
-        flex-direction: row;
-        margin-bottom: 24px;
+        flex-direction: column;
 
-        .video__image {
-          margin-right: 16px;
+        .video {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 24px;
 
-          img {
-            width: 120px;
-            height: 70px;
-          }
-        }
-        .aside {
-          .videoList {
-            h3 {
-              margin-top: 40px;
-              margin-bottom: 40px;
+          // .videoList {
+          //   h3 {
+          //     margin-top: 40px;
+          //     margin-bottom: 40px;
+          //   }
+          .video__image {
+            margin-right: 16px;
+
+            img {
+              width: 120px;
+              height: 70px;
+              border-radius: 4px;
             }
+          }
 
-            .video__content {
-              display: flex;
-              flex-direction: column;
+          .video__content {
+            display: flex;
+            flex-direction: column;
 
-              .video__title {
-                margin-bottom: 16px;
-              }
+            .video__title {
+              margin-bottom: 16px;
+              font-weight: $font-bold;
             }
           }
         }
