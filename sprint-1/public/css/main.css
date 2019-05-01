@@ -926,6 +926,13 @@ body {
     width: 100vw;
     margin-left: 16px;
     margin-right: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   #root .App .button {
     background-color: #0095FF;
@@ -964,7 +971,8 @@ body {
     height: 48px;
     border-radius: 50%;
   }
-  #root .App nav #searchBar input {
+  #root .App nav .searchBar .searchInput #search {
+    position: relative;
     background-color: #E1E1E1;
     border-radius: 5%;
     border: 1px solid #E1E1E1;
@@ -972,7 +980,13 @@ body {
     width: 90%;
     margin-bottom: 8px;
   }
-  #root .App nav .upload {
+  #root .App nav .searchBar .searchIcon {
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    z-index: 1;
+  }
+  #root .App .upload {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -986,7 +1000,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
   }
-  #root .App nav .upload .button {
+  #root .App .upload .button {
     background-color: #0095FF;
     margin-right: 16px;
     height: 50px;
@@ -995,17 +1009,108 @@ body {
     font-weight: bold;
     border-radius: 4px;
   }
-  #root .App nav .upload .icon {
+  #root .App .upload .icon {
     width: 20%;
   }
-  #root .App .hero {
+  #root .hero {
     width: 100%;
     margin-bottom: 32px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  #root .App .hero__video img {
+  #root .hero__video {
+    position: relative;
+  }
+  #root .hero__video .video__icons {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    top: 80%;
+    position: absolute;
+    z-index: 1;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #root .hero__video img {
     height: 183px;
   }
-  #root .App .main .title {
+  #root .hero__video .play,
+  #root .hero__video .fullscreen,
+  #root .hero__video .volume {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 16px;
+    background-color: black;
+    opacity: 0.5;
+    height: 25px;
+    width: 25px;
+  }
+  #root .hero__video .play img,
+  #root .hero__video .fullscreen img,
+  #root .hero__video .volume img {
+    height: 18px;
+  }
+  #root .hero__video .progressbar {
+    background-color: black;
+    opacity: 0.5;
+    width: 180px;
+    height: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 16px;
+  }
+  #root .hero__video .progressbar__line {
+    height: 5px;
+    width: 150px;
+    background-color: black;
+    z-index: 2;
+    opacity: 1;
+  }
+  #root .hero__video .volume {
+    left: 300px;
+  }
+  #root .hero__video .fullscreen {
+    left: 250px;
+  }
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  .main .title {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1015,14 +1120,14 @@ body {
             flex-direction: column;
     margin-bottom: 24px;
   }
-  #root .App .main .title h1 {
+  .main .title h1 {
     text-align: left;
     margin-bottom: 16px;
   }
-  #root .App .main .title .author,
-  #root .App .main .title .stats,
-  #root .App .main .title .views,
-  #root .App .main .title .likes {
+  .main .title .author,
+  .main .title .stats,
+  .main .title .views,
+  .main .title .likes {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1034,33 +1139,33 @@ body {
         -ms-flex-align: center;
             align-items: center;
   }
-  #root .App .main .title .author {
+  .main .title .author {
     margin-bottom: 32px;
   }
-  #root .App .main .title .author h2 {
+  .main .title .author h2 {
     margin-right: 8px;
   }
-  #root .App .main .title .stats {
+  .main .title .stats {
     padding-bottom: 24px;
     border-bottom: 1px solid #E1E1E1;
   }
-  #root .App .main .title .stats .views img,
-  #root .App .main .title .stats .likes img {
+  .main .title .stats .views img,
+  .main .title .stats .likes img {
     margin-right: 8px;
   }
-  #root .App .main .title .stats .views {
+  .main .title .stats .views {
     margin-right: 16px;
   }
-  #root .App .main .description {
+  .main .description {
     text-align: left;
     margin-bottom: 40px;
   }
-  #root .App .comment__title {
+  .comment__title {
     font-weight: bold;
     text-align: left;
     margin-bottom: 32px;
   }
-  #root .App .comments {
+  .comments {
     margin-top: 32px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1075,14 +1180,14 @@ body {
     margin-left: 5%;
     margin-right: 5%;
   }
-  #root .App .comments h4 {
+  .comments h4 {
     text-transform: uppercase;
     color: #E1E1E1;
   }
-  #root .App .comments__input h4 {
+  .comments__input h4 {
     margin-bottom: 8px;
   }
-  #root .App .comments__form {
+  .comments__form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1091,25 +1196,25 @@ body {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  #root .App .comments__form--icon {
+  .comments__form--icon {
     margin-right: 5%;
   }
-  #root .App .comments__form--icon img {
+  .comments__form--icon img {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     margin-top: 25px;
   }
-  #root .App .comments__form--icon {
+  .comments__form--icon {
     margin-right: 5%;
   }
-  #root .App .comments__form--icon img {
+  .comments__form--icon img {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     margin-top: 25px;
   }
-  #root .App .comments__form #myForm .formComment {
+  .comments__form #myForm .formComment {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1118,13 +1223,13 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #root .App .comments--icon {
+  .comments--icon {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: #FAFAFA;
   }
-  #root .App .comments form {
+  .comments form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1133,16 +1238,16 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #root .App .comments form textarea {
+  .comments form textarea {
     border: 2px #0095FF solid;
     margin-bottom: 16px;
     background-color: #FAFAFA;
     border-radius: 6px;
   }
-  #root .App .comments form textareaplaceholder {
+  .comments form textareaplaceholder {
     margin-top: 2%;
   }
-  #root .App .comments form button {
+  .comments form button {
     background-color: #0095FF;
     color: white;
     height: 48px;
@@ -1155,19 +1260,19 @@ body {
     text-transform: uppercase;
     font-weight: bold;
   }
-  #root .App .comments form button:hover {
+  .comments form button:hover {
     background-color: black;
   }
-  #root .App .comments .hidden {
+  .comments .hidden {
     display: none;
   }
-  #root .App .comments .comments-table {
+  .comments .comments-table {
     width: 100vw;
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 40px;
   }
-  #root .App .comments .comments-table .comments__published {
+  .comments .comments-table .comments__published {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1181,7 +1286,7 @@ body {
     margin-left: 5%;
     margin-right: 5%;
   }
-  #root .App .comments .comments-table .comments__published .comments__img {
+  .comments .comments-table .comments__published .comments__img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1190,7 +1295,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #root .App .comments .comments-table .comments__published .comments__img .comments--icon {
+  .comments .comments-table .comments__published .comments__img .comments--icon {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1203,7 +1308,7 @@ body {
     border-radius: 50%;
     background-color: #FAFAFA;
   }
-  #root .App .comments .comments-table .comments__published .comments__body {
+  .comments .comments-table .comments__published .comments__body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1217,29 +1322,29 @@ body {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  #root .App .comments .comments-table .comments__published .comments__body .username,
-  #root .App .comments .comments-table .comments__published .comments__body .date {
+  .comments .comments-table .comments__published .comments__body .username,
+  .comments .comments-table .comments__published .comments__body .date {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 50%;
             flex: 1 1 50%;
   }
-  #root .App .comments .comments-table .comments__published .comments__body .date {
+  .comments .comments-table .comments__published .comments__body .date {
     text-align: right;
     color: #E1E1E1;
   }
-  #root .App .comments .comments-table .comments__published .comments__body .username {
+  .comments .comments-table .comments__published .comments__body .username {
     font-weight: bold;
   }
-  #root .App .comments .comments-table .comments__published .comments__body .input {
+  .comments .comments-table .comments__published .comments__body .input {
     margin-top: 5%;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
   }
-  #root .App .comments title {
+  .comments title {
     margin-bottom: 40px;
   }
-  #root .App .aside {
+  .aside {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1249,7 +1354,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #root .App .aside .video {
+  .aside .video {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1260,15 +1365,15 @@ body {
             flex-direction: row;
     margin-bottom: 24px;
   }
-  #root .App .aside .video .video__image {
+  .aside .video .video__image {
     margin-right: 16px;
   }
-  #root .App .aside .video .video__image img {
+  .aside .video .video__image img {
     width: 120px;
     height: 70px;
     border-radius: 4px;
   }
-  #root .App .aside .video .video__content {
+  .aside .video .video__content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1277,7 +1382,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #root .App .aside .video .video__content .video__title {
+  .aside .video .video__content .video__title {
     margin-bottom: 16px;
     font-weight: bold;
   }

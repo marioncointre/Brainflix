@@ -30,6 +30,8 @@ body {
       width: 100vw;
       margin-left: 16px;
       margin-right: 16px;
+      display: flex;
+      flex-direction: column;
 
       .button {
         background-color: $brainflix-blue;
@@ -57,283 +59,358 @@ body {
           }
         }
 
-        #searchBar input {
-          background-color: $mercury-color;
-          border-radius: 5%;
-          border: 1px solid $mercury-color;
-          height: 30px;
-          width: 90%;
-          margin-bottom: 8px;
-        }
+        .searchBar {
+          .searchInput {
+            #search {
+              position: relative;
+              background-color: $mercury-color;
+              border-radius: 5%;
+              border: 1px solid $mercury-color;
+              height: 30px;
+              width: 90%;
+              margin-bottom: 8px;
+            }
+          }
 
-        .upload {
+          .searchIcon {
+            position: absolute;
+            left: 20px;
+            top: 60px;
+            z-index: 1;
+          }
+        }
+      }
+      .upload {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 16px;
+        align-items: center;
+
+        .button {
+          background-color: $brainflix-blue;
+          margin-right: 16px;
+          height: 50px;
+          width: 70%;
+          color: $primary-color;
+          font-weight: $font-bold;
+          border-radius: 4px;
+        }
+        .icon {
+          width: 20%;
+        }
+      }
+    }
+    .hero {
+      width: 100%;
+      margin-bottom: 32px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      &__video {
+        position: relative;
+
+        .video__icons {
+          padding-left: 20px;
+          padding-right: 20px;
           display: flex;
           flex-direction: row;
-          width: 100%;
-          margin-bottom: 16px;
+          top: 80%;
+          position: absolute;
+          z-index: 1;
           align-items: center;
-
-          .button {
-            background-color: $brainflix-blue;
-            margin-right: 16px;
-            height: 50px;
-            width: 70%;
-            color: $primary-color;
-            font-weight: $font-bold;
-            border-radius: 4px;
-          }
-          .icon {
-            width: 20%;
-          }
         }
-      }
-      .hero {
-        width: 100%;
-        margin-bottom: 32px;
 
-        &__video {
+        img {
+          height: 183px;
+        }
+
+        // .play {
+        //   left: 16px;
+        // }
+
+        .play,
+        .fullscreen,
+        .volume {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 16px;
+          background-color: black;
+          opacity: 0.5;
+          height: 25px;
+          width: 25px;
+
           img {
-            height: 183px;
+            height: 18px;
           }
+        }
+        .progressbar {
+          background-color: black;
+          opacity: 0.5;
+          width: 180px;
+          height: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 16px;
+
+          &__line {
+            height: 5px;
+            width: 150px;
+            background-color: black;
+            z-index: 2;
+            opacity: 1;
+          }
+        }
+
+        .volume {
+          left: 300px;
+        }
+        .fullscreen {
+          left: 250px;
+        }
+      }
+    }
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    .title {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+
+      h1 {
+        text-align: left;
+        margin-bottom: 16px;
+      }
+      .author,
+      .stats,
+      .views,
+      .likes {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .author {
+        margin-bottom: 32px;
+        h2 {
+          margin-right: 8px;
         }
       }
 
-      .main {
-        .title {
+      .stats {
+        padding-bottom: 24px;
+        border-bottom: 1px solid $mercury-color;
+
+        .views img,
+        .likes img {
+          margin-right: 8px;
+        }
+
+        .views {
+          margin-right: 16px;
+        }
+      }
+    }
+
+    .description {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+  }
+
+  .comment__title {
+    font-weight: $font-bold;
+    text-align: left;
+    margin-bottom: 32px;
+  }
+
+  .comments {
+    margin-top: 32px;
+    @include column;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    h4 {
+      text-transform: uppercase;
+      color: $mercury-color;
+    }
+    &__input {
+      h4 {
+        margin-bottom: 8px;
+      }
+    }
+    &__form {
+      @include row;
+
+      &--icon {
+        margin-right: 5%;
+
+        img {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          margin-top: 25px;
+        }
+      }
+
+      &--icon {
+        margin-right: 5%;
+
+        img {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          margin-top: 25px;
+        }
+      }
+
+      #myForm {
+        .formComment {
           display: flex;
           flex-direction: column;
-          margin-bottom: 24px;
-
-          h1 {
-            text-align: left;
-            margin-bottom: 16px;
-          }
-          .author,
-          .stats,
-          .views,
-          .likes {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-          }
-
-          .author {
-            margin-bottom: 32px;
-            h2 {
-              margin-right: 8px;
-            }
-          }
-
-          .stats {
-            padding-bottom: 24px;
-            border-bottom: 1px solid $mercury-color;
-
-            .views img,
-            .likes img {
-              margin-right: 8px;
-            }
-
-            .views {
-              margin-right: 16px;
-            }
-          }
         }
+      }
+    }
 
-        .description {
-          text-align: left;
-          margin-bottom: 40px;
+    &--icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $lightgrey;
+    }
+
+    form {
+      @include column;
+
+      textarea {
+        border: 2px $brainflix-blue solid;
+        margin-bottom: 16px;
+        background-color: $lightgrey;
+        border-radius: 6px;
+
+        &placeholder {
+          margin-top: 2%;
         }
       }
 
-      .comment__title {
+      button {
+        background-color: $brainflix-blue;
+        color: white;
+        height: 48px;
+        width: 224px;
+        align-self: flex-end;
+        margin-bottom: 24px;
+        border-radius: 4px;
+        font-family: "Avenir Next";
+        text-transform: uppercase;
         font-weight: $font-bold;
-        text-align: left;
-        margin-bottom: 32px;
-      }
 
-      .comments {
-        margin-top: 32px;
-        @include column;
-        align-items: center;
+        &:hover {
+          background-color: black;
+        }
+      }
+    }
+    .hidden {
+      display: none;
+    }
+
+    .comments-table {
+      width: 100vw;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 40px;
+
+      .comments__published {
+        @include row;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid $mercury-color;
         margin-left: 5%;
         margin-right: 5%;
 
-        h4 {
-          text-transform: uppercase;
-          color: $mercury-color;
-        }
-        &__input {
-          h4 {
-            margin-bottom: 8px;
-          }
-        }
-        &__form {
-          @include row;
-
-          &--icon {
-            margin-right: 5%;
-
-            img {
-              width: 48px;
-              height: 48px;
-              border-radius: 50%;
-              margin-top: 25px;
-            }
-          }
-
-          &--icon {
-            margin-right: 5%;
-
-            img {
-              width: 48px;
-              height: 48px;
-              border-radius: 50%;
-              margin-top: 25px;
-            }
-          }
-
-          #myForm {
-            .formComment {
-              display: flex;
-              flex-direction: column;
-            }
-          }
-        }
-
-        &--icon {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background-color: $lightgrey;
-        }
-
-        form {
+        .comments__img {
           @include column;
 
-          textarea {
-            border: 2px $brainflix-blue solid;
-            margin-bottom: 16px;
+          .comments--icon {
+            display: flex;
+            flex-direction: column;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             background-color: $lightgrey;
-            border-radius: 6px;
-
-            &placeholder {
-              margin-top: 2%;
-            }
           }
+        }
 
-          button {
-            background-color: $brainflix-blue;
-            color: white;
-            height: 48px;
-            width: 224px;
-            align-self: flex-end;
-            margin-bottom: 24px;
-            border-radius: 4px;
-            font-family: "Avenir Next";
-            text-transform: uppercase;
+        .comments__body {
+          @include row;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .username,
+          .date {
+            flex: 1 1 50%;
+          }
+          .date {
+            text-align: right;
+            color: $mercury-color;
+          }
+          .username {
             font-weight: $font-bold;
+          }
 
-            &:hover {
-              background-color: black;
-            }
+          .input {
+            margin-top: 5%;
+            flex: 1 1 100%;
           }
         }
-        .hidden {
-          display: none;
-        }
+      }
+    }
 
-        .comments-table {
-          width: 100vw;
-          margin-left: 5%;
-          margin-right: 5%;
-          margin-bottom: 40px;
+    title {
+      margin-bottom: 40px;
+    }
+  }
 
-          .comments__published {
-            @include row;
-            padding-top: 24px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid $mercury-color;
-            margin-left: 5%;
-            margin-right: 5%;
+  .aside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
-            .comments__img {
-              @include column;
+    .video {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 24px;
 
-              .comments--icon {
-                display: flex;
-                flex-direction: column;
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                background-color: $lightgrey;
-              }
-            }
+      // .videoList {
+      //   h3 {
+      //     margin-top: 40px;
+      //     margin-bottom: 40px;
+      //   }
+      .video__image {
+        margin-right: 16px;
 
-            .comments__body {
-              @include row;
-              align-items: center;
-              flex-wrap: wrap;
-
-              .username,
-              .date {
-                flex: 1 1 50%;
-              }
-              .date {
-                text-align: right;
-                color: $mercury-color;
-              }
-              .username {
-                font-weight: $font-bold;
-              }
-
-              .input {
-                margin-top: 5%;
-                flex: 1 1 100%;
-              }
-            }
-          }
-        }
-
-        title {
-          margin-bottom: 40px;
+        img {
+          width: 120px;
+          height: 70px;
+          border-radius: 4px;
         }
       }
 
-      .aside {
-        width: 100%;
+      .video__content {
         display: flex;
         flex-direction: column;
 
-        .video {
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          margin-bottom: 24px;
-
-          // .videoList {
-          //   h3 {
-          //     margin-top: 40px;
-          //     margin-bottom: 40px;
-          //   }
-          .video__image {
-            margin-right: 16px;
-
-            img {
-              width: 120px;
-              height: 70px;
-              border-radius: 4px;
-            }
-          }
-
-          .video__content {
-            display: flex;
-            flex-direction: column;
-
-            .video__title {
-              margin-bottom: 16px;
-              font-weight: $font-bold;
-            }
-          }
+        .video__title {
+          margin-bottom: 16px;
+          font-weight: $font-bold;
         }
       }
     }

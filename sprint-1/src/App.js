@@ -78,7 +78,7 @@ function App() {
         <CommentDiv />
         <CommentList comments={commentsTable} />
       </div>
-      <div class="aside">
+      <div className="aside">
         <h2>Next video</h2>
         <VideoList videos={videosTable} />
       </div>
@@ -89,16 +89,20 @@ function App() {
 function Header() {
   return (
     <nav>
-      <div class="logo">
+      <div className="logo">
         <img src="assets/Logo/Logo-brainflix.svg" />
       </div>
-      <div id="searchBar">
-        <img src="assets/Icons/PNG/Icon-search.png" />
-        <input type="text" name="search" id="search" placeholder="Search" />
+      <div class="searchBar">
+        <div class="searchIcon">
+          <img src="assets/Icons/PNG/Icon-search.png" />
+        </div>
+        <div class="searchInput">
+          <input type="text" name="search" id="search" placeholder="Search" />
+        </div>
       </div>
       <div className="upload">
         <button className="button">+ Upload</button>
-        <div class="icon">
+        <div className="icon">
           <img src="assets/Images/Mohan-muruge.jpg" />
         </div>
       </div>
@@ -110,19 +114,23 @@ function Hero() {
   return (
     <div className="hero">
       <div className="hero__video">
-        <img src="assets/Images/video-list-0.jpg" />
-      </div>
-      <div className="play">
-        <img src="assets/Icons/PNG/Icon-play.png" />
-      </div>
-      <div className="scrubber">
-        <img src="assets/Icons/PNG/Icon-scrubber-control.png" />
-      </div>
-      <div className="fullscreen">
-        <img src="assets/Icons/PNG/Icon-fullscreen.png" />
-      </div>
-      <div className="volume">
-        <img src="assets/Icons/PNG/Icon-volume.png" />
+        <div className="video__icons">
+          <div className="play">
+            <img src="assets/Icons/PNG/Icon-play.png" />
+          </div>
+          <div className="progressbar">
+            <div className="progressbar__line" />
+          </div>
+          <div className="fullscreen">
+            <img src="assets/Icons/PNG/Icon-fullscreen.png" />
+          </div>
+          <div className="volume">
+            <img src="assets/Icons/PNG/Icon-volume.png" />
+          </div>
+        </div>
+        <div className="bigVid">
+          <img src="assets/Images/video-list-0.jpg" />
+        </div>
       </div>
     </div>
   );
@@ -221,7 +229,7 @@ function CommentList(props) {
       />
     );
   });
-  return <div class="comments-table">{comments}</div>;
+  return <div className="comments-table">{comments}</div>;
 }
 
 function Com(props) {
