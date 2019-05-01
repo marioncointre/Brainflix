@@ -1108,6 +1108,7 @@ body {
     width: 100vw;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 40px;
   }
   #root .App .comments-table .comments__published {
     display: -webkit-box;
@@ -1132,6 +1133,19 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 25%;
+  }
+  #root .App .comments-table .comments__published .comments--icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FAFAFA;
   }
   #root .App .comments-table .comments__published .comments__body {
     display: -webkit-box;
@@ -1167,7 +1181,32 @@ body {
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
   }
-  #root .App--icon {
+  #root .App title {
+    margin-bottom: 40px;
+  }
+  #root .App .video {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-bottom: 24px;
+  }
+  #root .App .video .video__image {
+    margin-right: 16px;
+  }
+  #root .App .video .video__image img {
+    width: 120px;
+    height: 70px;
+  }
+  #root .App .video .aside .videoList h3 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  #root .App .video .aside .videoList .video__content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1175,10 +1214,9 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #FAFAFA;
+  }
+  #root .App .video .aside .videoList .video__content .video__title {
+    margin-bottom: 16px;
   }
 }
 

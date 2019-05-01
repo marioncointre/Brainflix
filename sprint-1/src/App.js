@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
@@ -9,6 +8,13 @@ function App() {
       <Hero />
       <Main />
       <CommentList />
+      <div className="comments-table">
+        <Comments comment={commentsTable} />
+      </div>
+      <div className="videoList">
+        <h3>Next Video</h3>
+      </div>
+      <VideoTest videoConst={videos} />
       <Aside />
     </div>
   );
@@ -41,28 +47,86 @@ function Hero() {
 function Aside() {
   return (
     <>
-      <title>Next vide</title>
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
+      <title>Next video</title>
+      <VideoList />
     </>
   );
 }
 
-function Video() {
+function VideoList() {
   return (
     <div className="video">
-      <div>image</div>
-      <div>video title</div>
-      <div>video author</div>
+      <div className="video__image">
+        <img src="assets/Images/video-list-0.jpg" />
+      </div>
+      <div className="video__content">
+        <div className="video__title">
+          Become A Travel Pro In One Easy Lesson...
+        </div>
+        <div className="video__author">Scotty Cranmer</div>
+      </div>
     </div>
   );
 }
+
+const videos = [
+  {
+    videoTitle: "Become A Travel Pro In One Easy Lesson...",
+    videoAuthor: "Scotty Cranmer",
+    videoImage: <img src="assets/Images/video-list-0.jpg" />
+  },
+  {
+    videoTitle: "Become A Travel Pro In One Easy Lesson...",
+    videoAuthor: "Scotty Cranmer",
+    videoImage: <img src="assets/Images/video-list-0.jpg" />
+  },
+  {
+    videoTitle: "Become A Travel Pro In One Easy Lesson...",
+    videoAuthor: "Scotty Cranmer",
+    videoImage: <img src="assets/Images/video-list-0.jpg" />
+  },
+  {
+    videoTitle: "Become A Travel Pro In One Easy Lesson...",
+    videoAuthor: "Scotty Cranmer",
+    videoImage: <img src="assets/Images/video-list-0.jpg" />
+  },
+  {
+    videoTitle: "Become A Travel Pro In One Easy Lesson...",
+    videoAuthor: "Scotty Cranmer",
+    videoImage: <img src="assets/Images/video-list-0.jpg" />
+  },
+  {
+    videoTitle: "Become A Travel Pro In One Easy Lesson...",
+    videoAuthor: "Scotty Cranmer",
+    videoImage: <img src="assets/Images/video-list-0.jpg" />
+  }
+];
+
+function VideoTest(props) {
+  const videoConst = props.videoConst.map(function(vid) {
+    return (
+      <Vid2
+        videoTitle={videos.videoTitle}
+        videoAuthor={videos.videoAuthor}
+        videoImage={videos.videoImage}
+      />
+    );
+  });
+  return <div>{videoConst}</div>;
+}
+
+function Vid2(props) {
+  return (
+    <div className="video">
+      <div className="video__image">{videos.videoImage}</div>
+      <div className="video__content">
+        <div className="video__title">{videos.videoTitle}</div>
+        <div className="video__author">{videos.videoAuthor}</div>
+      </div>
+    </div>
+  );
+}
+
 /*Aside section - ends */
 
 /*Main section - begins */
@@ -110,9 +174,6 @@ function CommentList() {
     <>
       <div className="comment__title">3 Comments</div>
       <Form />
-      <Comment />
-      <Comment />
-      <Comment />
     </>
   );
 }
@@ -141,13 +202,62 @@ function Form() {
           </form>
         </div>
       </div>
-      <div className="comments-table" />
     </div>
   );
 }
 
-function Comment() {
-  return <>API request</>;
+const commentsTable = [
+  {
+    nameIcon: "",
+    commentDate: "12/18/2018",
+    userName: "Micheal Lyons",
+    commentInput:
+      "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed."
+  },
+  {
+    nameIcon: "",
+    commentDate: "12/18/2018",
+    userName: "Gary Wong",
+    commentInput:
+      "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!"
+  },
+  {
+    nameIcon: "",
+    commentDate: "11/15/2018",
+    userName: "Theodore Duncan",
+    commentInput:
+      "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!"
+  }
+];
+
+function Comments(props) {
+  const comment = props.comment.map(function(com) {
+    return (
+      <Com
+        nameIcon={com.nameIcon}
+        commentDate={com.commentDate}
+        userName={com.userName}
+        commentInput={com.commentInput}
+      />
+    );
+  });
+
+  return { comment };
+}
+
+function Com(props) {
+  return (
+    <div className="comments__published">
+      <div className="comments__img">
+        <div className="comments--icon">{props.nameIcon}</div>
+      </div>
+      <div className="comments__body">
+        <div className="username">{props.userName}</div>
+        <div className="date">{props.commentDate}</div>
+        <div className="input">{props.commentInput}</div>
+      </div>
+    </div>
+  );
 }
 
 /*Aside section - ends */
