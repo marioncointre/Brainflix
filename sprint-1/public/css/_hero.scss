@@ -1,0 +1,135 @@
+.hero {
+  width: 100%;
+  margin-bottom: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__video {
+    position: relative;
+
+    .bigVid {
+      img {
+        height: 183px;
+      }
+    }
+    .video__icons {
+      padding-left: 5%;
+      padding-right: 5%;
+      display: flex;
+      flex-direction: row;
+      top: 80%;
+      position: absolute;
+      z-index: 1;
+      align-items: center;
+    }
+
+    .play,
+    .fullscreen,
+    .volume {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+      height: 25px;
+      width: 25px;
+      background-color: rgba(50, 50, 50, 0.9);
+
+      img {
+        height: 18px;
+      }
+    }
+    .progressbar {
+      background-color: rgba(50, 50, 50, 0.9);
+      opacity: 0.5;
+      width: 180px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+      z-index: 1;
+
+      &__line {
+        height: 5px;
+        width: 85%;
+        background-color: black;
+        z-index: 2;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    background-color: black;
+    justify-content: center;
+    margin-bottom: 48px;
+
+    &__video {
+      width: 700px;
+
+      .bigVid {
+        img {
+          height: 400px;
+          width: 700px;
+        }
+      }
+      .video__icons {
+        padding-left: 1%;
+        padding-right: 1%;
+        top: 90%;
+      }
+
+      .play {
+        margin-right: 16px;
+      }
+
+      .fullscreen,
+      .volume {
+        margin-right: 0px;
+        padding-right: 10px;
+      }
+
+      .progressbar {
+        width: 519px;
+        margin-right: 16px;
+
+        &__line {
+          height: 5px;
+          width: 85%;
+          background-color: black;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    margin-bottom: 40px;
+
+    &__video {
+      width: 944px;
+
+      .bigVid {
+        img {
+          height: 540px;
+          width: 944px;
+        }
+      }
+      .video__icons {
+        padding-left: 2%;
+        padding-right: 2%;
+        top: 90%;
+      }
+
+      .progressbar {
+        width: 751px;
+      }
+    }
+  }
+}

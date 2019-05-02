@@ -1,80 +1,82 @@
 @font-face {
-    font-family: 'Avenir Next';
-    src: url('../Fonts/Linotype_AvenirNextLTPro_Bold.otf');
-    src: url('../Fonts/Linotype_AvenirNextLTPro_Demi.otf');
-    src: url('../Fonts/Linotype_AvenirNextLTPro_Regular.otf');
+  font-family: "Avenir Next";
+  src: url("../Fonts/Linotype_AvenirNextLTPro_Bold.otf");
+  src: url("../Fonts/Linotype_AvenirNextLTPro_Demi.otf");
+  src: url("../Fonts/Linotype_AvenirNextLTPro_Regular.otf");
 }
 
 /* Variables */
-$font-bold : bold;
-$font-demibold : 500;
-$font-family: 'Avenir Next';
+$font-bold: bold;
+$font-demibold: 500;
+$font-family: "Avenir Next";
 $font-family-mobile-xs: 12px;
 
-
 // Resetting agent values
-h1, h2, h3, h4, h5, p {
-margin-block-start: 0em;
-margin-block-end: 0em;
-margin-inline-start: 0px;
-margin-inline-end: 0px;
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+input {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 a {
-    text-decoration: none;
-    $font-family: 'Avenir Next';
-    color: $primary-color;
-  }
-
+  text-decoration: none;
+  $font-family: "Avenir Next";
+  color: $primary-color;
+}
 
 /* Desktop & Tablet rules */
-@media (min-width: 768px){
-
-.hero-header {
+@media (min-width: 768px) {
+  .hero-header {
     font-size: 60px;
     line-height: 68px;
-}
+  }
 
-h1 {
+  h1 {
     font-size: 36px;
     line-height: 44px;
-}
+  }
 
-h2 {
+  h2 {
     font-size: 24px;
     line-height: 32px;
     color: $black-color;
-}
+  }
 
-h3 {
+  h3 {
     font-size: 16px;
     line-height: 24px;
     color: $black-color;
+  }
 
-}
-
-h4, p {
+  h4,
+  p {
     font-size: 14px;
     line-height: 22px;
     color: $black-color;
+  }
 
-}
-
-ul, ol {
+  ul,
+  ol {
     font-size: 14px;
     line-height: 20px;
     color: $black-color;
+  }
 
-}
-
-h5 {
+  h5 {
     font-size: 12px;
     line-height: 20px;
     font-weight: 400;
     color: $black-color;
-}
+  }
 
-label {
+  label {
     font-size: 12px;
     line-height: 20px;
     color: $silver-color;
@@ -82,42 +84,42 @@ label {
     font-weight: $font-demibold;
     color: $mercury-color;
     padding-bottom: 8px;
-}
+  }
 }
 
 /* Mobile rules */
-@media (min-width:320px) and (max-width: 767px){
-
-h1 {
+@media (min-width: 320px) and (max-width: 767px) {
+  h1 {
     font-size: 24px;
     line-height: 32px;
     color: $black-color;
+  }
 
-}
-
-h2 {
+  h2 {
     font-size: 14px;
     line-height: 22px;
     color: $black-color;
+  }
 
-}
-
-h4, p, ul, ol {
+  h4,
+  p,
+  ul,
+  ol,
+  input,
+  button {
     font-size: 13px;
     line-height: 18px;
     color: $black-color;
+  }
 
-}
-
-h5 {
+  h5 {
     font-size: 12px;
     line-height: 20px;
     font-weight: 400;
     color: $black-color;
+  }
 
-}
-
-label {
+  label {
     font-size: 12px;
     line-height: 20px;
     color: $silver-color;
@@ -125,6 +127,5 @@ label {
     font-weight: $font-demibold;
     color: $mercury-color;
     padding-bottom: 8px;
-
-}
+  }
 }

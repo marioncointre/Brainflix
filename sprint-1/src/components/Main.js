@@ -4,6 +4,7 @@ function Main() {
   return (
     <div className="main">
       <Title />
+      <hr />
       <Paragraph />
     </div>
   );
@@ -12,7 +13,7 @@ function Main() {
 function Title() {
   return (
     <div className="title">
-      <h1>BMX Rampage: 201 Highlights 1</h1>
+      <h1>BMX Rampage: 2018 Highlights</h1>
       <div className="author">
         <h2>By Red Cow</h2>
         <p>12/18/2018</p>
@@ -24,7 +25,6 @@ function Title() {
         </div>
         <div className="likes">
           <img src="assets/Icons/PNG/Icon-likes.png" />
-
           <p>110,985</p>
         </div>
       </div>

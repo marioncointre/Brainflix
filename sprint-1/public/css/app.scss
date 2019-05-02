@@ -1,0 +1,30 @@
+@import "colors";
+@import "fonts";
+@import "mixens";
+@import "header";
+@import "hero";
+@import "main";
+// @import "comments";
+
+/* Resetting  user agent styling */
+html,
+body,
+ul,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  color: #323232;
+  font-family: "Avenir Next";
+}
+/* Resetting  user agent styling */
+button,
+input,
+hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
