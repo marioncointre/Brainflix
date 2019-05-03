@@ -46,7 +46,7 @@ const videosTable = [
 function Videos() {
   return (
     <div className="aside">
-      <h2>Next video</h2>
+      <label>Next video</label>
       <VideoList videos={videosTable} />
     </div>
   );

@@ -1,12 +1,8 @@
 @charset "UTF-8";
 /* Variables */
-@font-face {
-  font-family: "Avenir Next";
-  src: url("../Fonts/Linotype_AvenirNextLTPro_Bold.otf");
-  src: url("../Fonts/Linotype_AvenirNextLTPro_Demi.otf");
-  src: url("../Fonts/Linotype_AvenirNextLTPro_Regular.otf");
-}
-
+@import url("../fonts/Linotype_AvenirNextLTPro_Regular.otf");
+@import url("../fonts/Linotype_AvenirNextLTPro_Demi.otf");
+@import url("../fonts/Linotype_AvenirNextLTPro_Bold.otf");
 /* Variables */
 h1,
 h2,
@@ -35,38 +31,47 @@ a {
   .hero-header {
     font-size: 60px;
     line-height: 68px;
+    font-family: "Avenir";
   }
   h1 {
     font-size: 36px;
     line-height: 44px;
+    font-family: "Avenir";
+    font-weight: 900;
   }
   h2 {
     font-size: 24px;
     line-height: 32px;
     color: #323232;
+    font-family: "Avenir";
   }
   h3 {
     font-size: 16px;
     line-height: 24px;
     color: #323232;
+    font-family: "Avenir";
   }
   h4,
-  p {
+  p,
+  div {
     font-size: 14px;
     line-height: 22px;
     color: #323232;
+    font-family: "Avenir";
   }
   ul,
   ol {
     font-size: 14px;
     line-height: 20px;
     color: #323232;
+    font-family: "Avenir";
   }
   h5 {
     font-size: 12px;
     line-height: 20px;
     font-weight: 400;
     color: #323232;
+    font-family: "Avenir";
   }
   label {
     font-size: 12px;
@@ -76,6 +81,7 @@ a {
     font-weight: 500;
     color: #E1E1E1;
     padding-bottom: 8px;
+    font-family: "Avenir";
   }
 }
 
@@ -85,27 +91,33 @@ a {
     font-size: 24px;
     line-height: 32px;
     color: #323232;
+    font-family: "Avenir";
+    font-weight: 900;
   }
   h2 {
     font-size: 14px;
     line-height: 22px;
     color: #323232;
+    font-family: "Avenir";
   }
   h4,
   p,
   ul,
   ol,
   input,
-  button {
+  button,
+  div {
     font-size: 13px;
     line-height: 18px;
     color: #323232;
+    font-family: "Avenir";
   }
   h5 {
     font-size: 12px;
     line-height: 20px;
     font-weight: 400;
     color: #323232;
+    font-family: "Avenir";
   }
   label {
     font-size: 12px;
@@ -115,6 +127,7 @@ a {
     font-weight: 500;
     color: #E1E1E1;
     padding-bottom: 8px;
+    font-family: "Avenir";
   }
 }
 
@@ -134,6 +147,7 @@ a {
           align-items: center;
   margin-left: 16px;
   margin-right: 16px;
+  margin-top: 16px;
 }
 
 .nav .logo {
@@ -149,7 +163,7 @@ a {
 
 .nav #search {
   position: relative;
-  background-color: #E1E1E1;
+  background-color: #FAFAFA;
   background-image: url("../assets/Icons/SVG/Icon-search.svg");
   background-repeat: no-repeat;
   background-position: 7px;
@@ -202,6 +216,12 @@ a {
   }
   .nav .logo {
     margin-right: 169px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .nav #search,
   .nav .button {
@@ -224,7 +244,7 @@ a {
 }
 
 .hero {
-  width: 100%;
+  max-width: 100%;
   margin-bottom: 32px;
   position: relative;
   display: -webkit-box;
@@ -380,6 +400,12 @@ a {
 }
 
 .main {
+  max-width: 100%;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.main .info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,11 +415,13 @@ a {
           flex-direction: column;
   -ms-flex-line-pack: center;
       align-content: center;
-  margin-left: 16px;
-  margin-right: 16px;
 }
 
-.main .title {
+.main .info h1 {
+  margin-bottom: 16px;
+}
+
+.main .info .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -404,15 +432,10 @@ a {
   margin-bottom: 24px;
 }
 
-.main .title h1 {
-  text-align: left;
-  margin-bottom: 16px;
-}
-
-.main .title .author,
-.main .title .stats,
-.main .title .views,
-.main .title .likes {
+.main .info .title .author,
+.main .info .title .stats,
+.main .info .title .views,
+.main .info .title .likes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -425,33 +448,37 @@ a {
           align-items: center;
 }
 
-.main .title .author {
+.main .info .title .author {
   margin-bottom: 32px;
 }
 
-.main .title .author h2 {
+.main .info .title .author p {
+  color: #AFAFAF;
+}
+
+.main .info .title .author h2 {
   margin-right: 8px;
 }
 
-.main .title .stats {
+.main .info .title .stats {
   padding-bottom: 24px;
   border-bottom: 1px solid #E1E1E1;
 }
 
-.main .title .stats .views img,
-.main .title .stats .likes img {
+.main .info .title .stats .views img,
+.main .info .title .stats .likes img {
   margin-right: 8px;
 }
 
-.main .title .stats .views {
+.main .info .title .stats .views {
   margin-right: 16px;
 }
 
-.main hr {
+.main .info hr {
   display: none;
 }
 
-.main .description {
+.main .info .description {
   text-align: left;
   margin-bottom: 40px;
   line-height: 25px;
@@ -459,10 +486,23 @@ a {
 
 @media (min-width: 768px) {
   .main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin-left: 24px;
     margin-right: 24px;
   }
-  .main .title {
+  .main .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main .info .title {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -474,32 +514,292 @@ a {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .main .title h1 {
+  .main .info .title h1 {
     margin-bottom: 24px;
   }
-  .main .title .author {
-    margin-bottom: 24px;
+  .main .info .title .author {
+    margin-bottom: 0px;
   }
-  .main .title .stats {
+  .main .info .title .stats {
     padding-bottom: 0px;
     border-bottom: 0px;
-    margin-bottom: 24px;
+    margin-bottom: 0px;
   }
-  .main .title .stats .views {
+  .main .info .title .stats .views {
     margin-right: 24px;
   }
-  .main hr {
+  .main .info hr {
     display: unset;
     border: 1px solid #E1E1E1;
     margin-bottom: 40px;
   }
-  .main .description {
-    text-align: left;
-    margin-bottom: 40px;
-    line-height: 25px;
+  .main .info .description {
+    margin-bottom: 64px;
   }
 }
 
+@media (min-width: 1440px) {
+  .main {
+    margin-left: 180px;
+    margin-right: 180px;
+    width: 712px;
+  }
+  .main .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 50%;
+    float: left;
+  }
+  .main aside {
+    width: 45%;
+    float: right;
+  }
+}
+
+.aside {
+  width: 100%;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.aside label {
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #AFAFAF;
+}
+
+.aside .video {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 24px;
+}
+
+.aside .video .video__image {
+  margin-right: 16px;
+}
+
+.aside .video .video__image img {
+  width: 120px;
+  height: 70px;
+  border-radius: 4px;
+}
+
+.aside .video .video__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.aside .video .video__content .video__title {
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+/* Default CSS styling for mobile 320px */
+@media (min-width: 320px) {
+  .comments {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 100%;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .comments__title {
+    font-weight: bold;
+    margin-bottom: 32px;
+    font-family: "Avenir";
+  }
+  .comments .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .comments .form__icon {
+    margin-right: 16px;
+  }
+  .comments .form__icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-top: 25px;
+  }
+  .comments .form__input h4 {
+    color: #AFAFAF;
+    margin-bottom: 16px;
+  }
+  .comments .form__input #myForm .formName {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .comments .form__input #myForm .formComment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .comments .form__input #myForm .formComment textarea {
+    border: 2px #0095FF solid;
+    margin-bottom: 16px;
+    background-color: #FAFAFA;
+    border-radius: 6px;
+    font-family: "Avenir";
+  }
+  .comments .form__input #myForm button {
+    background-color: #0095FF;
+    color: white;
+    height: 48px;
+    width: 224px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    font-family: "Avenir Next";
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .comments--icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FAFAFA;
+  }
+  .comments__table {
+    width: 100%;
+  }
+  .comments__table .published {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E1E1E1;
+  }
+  .comments__table .published__img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 20%;
+  }
+  .comments__table .published__icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #E1E1E1;
+  }
+  .comments__table .published__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+  }
+  .comments__table .published__body .username,
+  .comments__table .published__body .date {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+  }
+  .comments__table .published__body .date {
+    text-align: right;
+    color: #E1E1E1;
+  }
+  .comments__table .published__body .username {
+    font-weight: bold;
+  }
+  .comments__table .published__body .input {
+    margin-top: 5%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+}
+
+/* styling for tablet from 768px */
+@media (min-width: 768px) {
+  .comments .form__input #myForm {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .comments .form__input #myForm .formComment {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .comments .form__input #myForm .formComment textarea {
+    width: 440px;
+  }
+  .comments .form__input #myForm button {
+    width: 160px;
+  }
+}
+
+/* styling for desktop from 1440px */
 /* Resetting  user agent styling */
 html,
 body,
@@ -512,7 +812,8 @@ button {
 html,
 body {
   color: #323232;
-  font-family: "Avenir Next";
+  font-family: "Avenir";
+  overflow-x: hidden;
 }
 
 /* Resetting  user agent styling */

@@ -11,6 +11,8 @@ function App() {
       <Header />
       <Hero />
       <Main />
+      <Comments />
+      <Videos />
     </div>
   );
 }

@@ -36,7 +36,7 @@ function Comments() {
 function CommentDiv() {
   return (
     <>
-      <div className="comment__title">3 Comments</div>
+      <div className="comments__title">3 Comments</div>
       <Form />
     </>
   );
@@ -44,12 +44,10 @@ function CommentDiv() {
 
 function Form() {
   return (
-    <div className="comments__form">
-      <div className="comments__form--icon">
-        <img src="assets/images/Mohan-muruge.jpg" />
-      </div>
-      <div className="comments__input">
-        <h4>Join the Conversation </h4>
+    <div className="form" className="form__icon">
+      <img src="assets/images/Mohan-muruge.jpg" />
+      <div className="form__input">
+        <h4>JOIN THE CONVERSATION </h4>
         <form id="myForm" action="submit" method="post">
           <div className="formComment">
             <textarea
@@ -79,16 +77,16 @@ function CommentList(props) {
       />
     );
   });
-  return <div className="comments-table">{comments}</div>;
+  return <div className="comments__table">{comments}</div>;
 }
 
 function Com(props) {
   return (
-    <div className="comments__published">
-      <div className="comments__img">
-        <div className="comments--icon">{props.nameIcon}</div>
+    <div className="published">
+      <div className="published__img">
+        <div className="published__icon">{props.nameIcon}</div>
       </div>
-      <div className="comments__body">
+      <div className="published__body">
         <div className="username">{props.userName}</div>
         <div className="date">{props.commentDate}</div>
         <div className="input">{props.commentInput}</div>

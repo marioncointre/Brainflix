@@ -4,7 +4,8 @@
 @import "header";
 @import "hero";
 @import "main";
-// @import "comments";
+@import "videos";
+@import "comments";
 
 /* Resetting  user agent styling */
 html,
@@ -18,7 +19,8 @@ button {
 html,
 body {
   color: #323232;
-  font-family: "Avenir Next";
+  font-family: "Avenir";
+  overflow-x: hidden;
 }
 /* Resetting  user agent styling */
 button,

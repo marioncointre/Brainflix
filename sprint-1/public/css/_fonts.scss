@@ -1,14 +1,11 @@
-@font-face {
-  font-family: "Avenir Next";
-  src: url("../Fonts/Linotype_AvenirNextLTPro_Bold.otf");
-  src: url("../Fonts/Linotype_AvenirNextLTPro_Demi.otf");
-  src: url("../Fonts/Linotype_AvenirNextLTPro_Regular.otf");
-}
+@import url("../fonts/Linotype_AvenirNextLTPro_Regular.otf");
+@import url("../fonts/Linotype_AvenirNextLTPro_Demi.otf");
+@import url("../fonts/Linotype_AvenirNextLTPro_Bold.otf");
 
 /* Variables */
 $font-bold: bold;
 $font-demibold: 500;
-$font-family: "Avenir Next";
+$font-family: "Avenir";
 $font-family-mobile-xs: 12px;
 
 // Resetting agent values
@@ -27,7 +24,7 @@ input {
 
 a {
   text-decoration: none;
-  $font-family: "Avenir Next";
+  $font-family: "Avenir";
   color: $primary-color;
 }
 
@@ -36,30 +33,37 @@ a {
   .hero-header {
     font-size: 60px;
     line-height: 68px;
+    font-family: "Avenir";
   }
 
   h1 {
     font-size: 36px;
     line-height: 44px;
+    font-family: "Avenir";
+    font-weight: 900;
   }
 
   h2 {
     font-size: 24px;
     line-height: 32px;
     color: $black-color;
+    font-family: "Avenir";
   }
 
   h3 {
     font-size: 16px;
     line-height: 24px;
     color: $black-color;
+    font-family: "Avenir";
   }
 
   h4,
-  p {
+  p,
+  div {
     font-size: 14px;
     line-height: 22px;
     color: $black-color;
+    font-family: "Avenir";
   }
 
   ul,
@@ -67,6 +71,7 @@ a {
     font-size: 14px;
     line-height: 20px;
     color: $black-color;
+    font-family: "Avenir";
   }
 
   h5 {
@@ -74,6 +79,7 @@ a {
     line-height: 20px;
     font-weight: 400;
     color: $black-color;
+    font-family: "Avenir";
   }
 
   label {
@@ -84,6 +90,7 @@ a {
     font-weight: $font-demibold;
     color: $mercury-color;
     padding-bottom: 8px;
+    font-family: "Avenir";
   }
 }
 
@@ -93,12 +100,15 @@ a {
     font-size: 24px;
     line-height: 32px;
     color: $black-color;
+    font-family: "Avenir";
+    font-weight: 900;
   }
 
   h2 {
     font-size: 14px;
     line-height: 22px;
     color: $black-color;
+    font-family: "Avenir";
   }
 
   h4,
@@ -106,10 +116,12 @@ a {
   ul,
   ol,
   input,
-  button {
+  button,
+  div {
     font-size: 13px;
     line-height: 18px;
     color: $black-color;
+    font-family: "Avenir";
   }
 
   h5 {
@@ -117,6 +129,7 @@ a {
     line-height: 20px;
     font-weight: 400;
     color: $black-color;
+    font-family: "Avenir";
   }
 
   label {
@@ -127,5 +140,6 @@ a {
     font-weight: $font-demibold;
     color: $mercury-color;
     padding-bottom: 8px;
+    font-family: "Avenir";
   }
 }
