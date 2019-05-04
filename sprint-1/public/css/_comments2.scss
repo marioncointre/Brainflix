@@ -94,10 +94,6 @@
           flex-wrap: wrap;
           width: 100%;
 
-          // .username,
-          // .date {
-          //   flex: 1 1 50%;
-          // }
           .date {
             text-align: right;
             color: $silver-color;
@@ -106,10 +102,6 @@
             font-weight: $font-bold;
             margin-right: 5px;
           }
-
-          // .input {
-          //   flex: 1 1 100%;
-          // }
         }
       }
     }
@@ -194,4 +186,75 @@
 
 /* styling for desktop from 1440px */
 @media (min-width: 1440px) {
+  .comments {
+    width: 712px;
+    margin-left: 180px;
+
+    &__title,
+    h4 {
+      align-self: flex-start;
+    }
+
+    h4 {
+      margin-left: 72px;
+    }
+    .form {
+      margin-right: 40px;
+      margin-left: 16px;
+
+      #myForm {
+        flex-direction: row;
+
+        .formComment {
+          margin-right: 16px;
+          margin-bottom: 0;
+          width: 440px;
+
+          textarea {
+            height: 48px;
+            margin-right: 16px;
+            width: 100%;
+            box-sizing: border-box;
+          }
+        }
+
+        button {
+          width: 160px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &__table {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .published {
+        &__img {
+          @include column;
+          width: 6%;
+          margin-right: 24px;
+        }
+
+        &__body {
+          @include row;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 624px;
+          justify-content: flex-start;
+
+          .username,
+          .date {
+            padding-bottom: 10px;
+          }
+
+          .input {
+            flex: 1 1 100%;
+          }
+        }
+      }
+    }
+  }
 }

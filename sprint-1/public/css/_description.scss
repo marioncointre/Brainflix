@@ -1,4 +1,14 @@
+.test {
+  display: flex;
+  flex-direction: column;
+}
+
 .main {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro {
   max-width: 100%;
   margin-left: 16px;
   margin-right: 16px;
@@ -65,7 +75,7 @@
   }
 }
 @media (min-width: 768px) {
-  .main {
+  .intro {
     flex-direction: row;
     margin-left: 24px;
     margin-right: 24px;
@@ -115,15 +125,24 @@
 }
 
 @media (min-width: 1440px) {
+  .test {
+    display: flex;
+    flex-direction: row;
+  }
+
   .main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .intro {
     margin-left: 180px;
-    margin-right: 180px;
     width: 712px;
 
     .info {
       display: flex;
       flex-direction: column;
-      width: 50%;
+      width: 100%;
       float: left;
     }
 
