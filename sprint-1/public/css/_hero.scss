@@ -57,6 +57,9 @@
         background-color: black;
         z-index: 2;
       }
+      p {
+        display: none;
+      }
     }
   }
 }
@@ -102,6 +105,13 @@
           width: 85%;
           background-color: black;
           z-index: 2;
+        }
+        p {
+          display: unset;
+          color: white;
+          font-size: 10px;
+          font-weight: $font-demibold;
+          padding-left: 10px;
         }
       }
     }

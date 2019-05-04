@@ -18,19 +18,19 @@
       &__icon {
         margin-right: 16px;
 
-        img {
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-          margin-top: 25px;
-        }
-      }
+        //     img {
+        //       width: 48px;
+        //       height: 48px;
+        //       border-radius: 50%;
+        //       margin-top: 25px;
+        //     }
+        //   }
 
-      &__input {
-        h4 {
-          color: $silver-color;
-          margin-bottom: 16px;
-        }
+        //   &__input {
+        //     h4 {
+        //       color: $silver-color;
+        //       margin-bottom: 16px;
+        //     }
 
         #myForm {
           .formName {
@@ -42,93 +42,108 @@
             display: flex;
             flex-direction: column;
 
-            textarea {
-              border: 2px $brainflix-blue solid;
-              margin-bottom: 16px;
-              background-color: $lightgrey;
-              border-radius: 6px;
-              font-family: "Avenir";
-            }
-          }
+            //         textarea {
+            //           border: 2px $brainflix-blue solid;
+            //           margin-bottom: 16px;
+            //           background-color: $lightgrey;
+            //           border-radius: 6px;
+            //           font-family: "Avenir";
+            //         }
+            //       }
 
-          button {
-            background-color: $brainflix-blue;
-            color: white;
-            height: 48px;
-            width: 224px;
-            align-self: flex-end;
-            margin-bottom: 24px;
-            border-radius: 4px;
-            font-family: "Avenir Next";
-            text-transform: uppercase;
-            font-weight: $font-demibold;
+            //       button {
+            //         background-color: $brainflix-blue;
+            //         color: white;
+            //         height: 48px;
+            //         width: 224px;
+            //         align-self: flex-end;
+            //         margin-bottom: 24px;
+            //         border-radius: 4px;
+            //         font-family: "Avenir Next";
+            //         text-transform: uppercase;
+            //         font-weight: $font-demibold;
+            // }
           }
         }
       }
-    }
 
-    &--icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: $lightgrey;
-    }
+      &--icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $lightgrey;
+      }
 
-    &__table {
-      width: 100%;
+      &__table {
+        width: 100%;
 
-      .published {
-        @include row;
-        padding-top: 24px;
-        padding-bottom: 24px;
-        border-bottom: 1px solid $mercury-color;
-
-        &__img {
-          @include column;
-          width: 20%;
-        }
-        &__icon {
-          display: flex;
-          flex-direction: column;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background-color: $mercury-color;
-        }
-
-        &__body {
+        .published {
           @include row;
-          align-items: center;
-          flex-wrap: wrap;
-          width: 100%;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          border-bottom: 1px solid $mercury-color;
 
-          .username,
-          .date {
-            flex: 1 1 50%;
+          &__img {
+            @include column;
+            width: 20%;
           }
-          .date {
-            text-align: right;
-            color: $mercury-color;
-          }
-          .username {
-            font-weight: $font-bold;
+          &__icon {
+            display: flex;
+            flex-direction: column;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $mercury-color;
           }
 
-          .input {
-            margin-top: 5%;
-            flex: 1 1 100%;
+          &__body {
+            @include row;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+
+            .username,
+            .date {
+              flex: 1 1 50%;
+            }
+            .date {
+              text-align: right;
+              color: $mercury-color;
+            }
+            .username {
+              font-weight: $font-bold;
+            }
+
+            .input {
+              margin-top: 5%;
+              flex: 1 1 100%;
+            }
           }
         }
       }
     }
   }
 }
-
 /* styling for tablet from 768px */
 @media (min-width: 768px) {
   .comments {
     .form {
+      &__icon {
+        flex-direction: row;
+        margin-right: 16px;
+
+        img {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          margin-top: 25px;
+        }
+      }
+
       &__input {
+        display: flex;
+        flex-direction: row;
+
         #myForm {
           flex-direction: row;
 

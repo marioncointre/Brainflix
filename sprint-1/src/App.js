@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Main from "./components/Main";
 import Videos from "./components/Videos";
-import Comments from "./components/Comments";
+import Comments2 from "./components/Comments2";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Hero />
       <Main />
-      <Comments />
+      <Comments2 />
       <Videos />
     </div>
   );

@@ -6,12 +6,7 @@ function Header() {
       <div className="logo">
         <img src="assets/Logo/Logo-brainflix.svg" />
       </div>
-      <input
-        type="text"
-        name="search"
-        id="search"
-        placeholder="         Search"
-      />
+      <input type="text" name="search" id="search" placeholder="Search" />
 
       <div className="upload">
         <button className="button">

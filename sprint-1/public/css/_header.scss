@@ -27,6 +27,10 @@
     height: 48px;
     margin-bottom: 8px;
     width: 100%;
+
+    &::placeholder {
+      padding-left: 30px;
+    }
   }
 
   .upload {
@@ -44,7 +48,7 @@
       font-weight: $font-bold;
       border-radius: 4px;
       font-family: "Avenir";
-      font-size: 2àpx;
+      font-size: 16px;
     }
     .icon {
       width: 48px;

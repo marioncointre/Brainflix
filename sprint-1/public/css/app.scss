@@ -5,13 +5,14 @@
 @import "hero";
 @import "main";
 @import "videos";
-@import "comments";
+@import "comments2";
 
 /* Resetting  user agent styling */
 html,
 body,
 ul,
-button {
+button,
+textarea {
   margin: 0;
   padding: 0;
 }

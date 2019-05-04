@@ -10,6 +10,7 @@ function Hero() {
           </div>
           <div className="progressbar">
             <div className="progressbar__line" />
+            <p> 0:00 /0:42</p>
           </div>
           <div className="fullscreen">
             <img src="assets/Icons/PNG/Icon-fullscreen.png" />
