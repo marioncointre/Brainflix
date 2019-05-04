@@ -278,8 +278,11 @@ a {
   position: relative;
 }
 
-.hero__video .bigVid img {
-  height: 183px;
+.hero__video .bigVid video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-height: 183px;
+  width: 100%;
 }
 
 .hero__video .video__icons {
@@ -368,8 +371,8 @@ a {
   .hero__video {
     width: 700px;
   }
-  .hero__video .bigVid img {
-    height: 400px;
+  .hero__video .bigVid video {
+    min-height: 400px;
     width: 700px;
   }
   .hero__video .video__icons {
@@ -411,7 +414,7 @@ a {
   .hero__video {
     width: 944px;
   }
-  .hero__video .bigVid img {
+  .hero__video .bigVid video {
     height: 540px;
     width: 944px;
   }
@@ -615,7 +618,7 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 100%;
+    width: 528px;
     float: left;
   }
   .intro aside {
@@ -636,6 +639,8 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .aside label {

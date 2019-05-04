@@ -10,11 +10,14 @@
     position: relative;
 
     .bigVid {
-      img {
-        height: 183px;
+      video {
+        object-fit: cover;
+        min-height: 183px;
+        width: 100%;
       }
     }
     .video__icons {
+      // display: none;
       padding-left: 5%;
       padding-right: 5%;
       display: flex;
@@ -75,8 +78,8 @@
       width: 700px;
 
       .bigVid {
-        img {
-          height: 400px;
+        video {
+          min-height: 400px;
           width: 700px;
         }
       }
@@ -126,7 +129,7 @@
       width: 944px;
 
       .bigVid {
-        img {
+        video {
           height: 540px;
           width: 944px;
         }

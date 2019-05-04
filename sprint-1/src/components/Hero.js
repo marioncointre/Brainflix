@@ -20,7 +20,12 @@ function Hero() {
           </div>
         </div>
         <div className="bigVid">
-          <img src="assets/Images/video-list-0.jpg" />
+          <video width="100%" poster="assets/Images/video-list-0.jpg">
+            <source
+              src="assets/Video/BrainStation_Video.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
       </div>
     </div>
