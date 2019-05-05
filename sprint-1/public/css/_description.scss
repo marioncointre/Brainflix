@@ -119,6 +119,7 @@
 
       .description {
         margin-bottom: 64px;
+        width: 496px;
       }
     }
   }
@@ -142,13 +143,18 @@
     .info {
       display: flex;
       flex-direction: column;
-      width: 528px;
+      width: 100%;
       float: left;
     }
-
     aside {
       width: 45%;
       float: right;
+    }
+  }
+
+  .description {
+    p {
+      width: 528px;
     }
   }
 }
