@@ -1,3 +1,5 @@
+/* Default CSS styling for mobile 320px */
+
 .section {
   display: flex;
   flex-direction: column;
@@ -14,8 +16,7 @@
   margin-right: 16px;
 
   .info {
-    display: flex;
-    flex-direction: column;
+    @include column;
     align-content: center;
 
     h1 {
@@ -23,16 +24,14 @@
     }
 
     .title {
-      display: flex;
-      flex-direction: column;
+      @include column;
       margin-bottom: 24px;
 
       .author,
       .stats,
       .views,
       .likes {
-        display: flex;
-        flex-direction: row;
+        @include row;
         align-items: center;
       }
 
@@ -74,6 +73,8 @@
     }
   }
 }
+
+/* Default CSS styling for tablet 768px */
 @media (min-width: 768px) {
   .intro {
     flex-direction: row;
@@ -81,16 +82,8 @@
     margin-right: 24px;
 
     .info {
-      display: flex;
-      flex-direction: column;
-
-      // aside {
-      //   width: 100%;
-      // }
-
       .title {
         flex-direction: row;
-        margin-bottom: 24px;
         flex-wrap: wrap;
         justify-content: space-between;
 
@@ -125,6 +118,7 @@
   }
 }
 
+/* Default CSS styling for desktop 1440px */
 @media (min-width: 1440px) {
   .section {
     display: flex;
@@ -132,8 +126,7 @@
   }
 
   .main {
-    display: flex;
-    flex-direction: column;
+    @include column;
   }
 
   .intro {
@@ -141,20 +134,13 @@
     width: 712px;
 
     .info {
-      display: flex;
-      flex-direction: column;
+      @include column;
       width: 100%;
       float: left;
     }
     aside {
       width: 45%;
       float: right;
-    }
-  }
-
-  .description {
-    p {
-      width: 74%;
     }
   }
 }

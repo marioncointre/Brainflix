@@ -1,3 +1,5 @@
+/* Default CSS styling for mobile 320px */
+
 @media (min-width: 320px) {
   .comments {
     margin-left: 16px;
@@ -105,7 +107,7 @@
   }
 }
 
-/* styling for tablet from 768px */
+/* Default CSS styling for tablet 768px */
 @media (min-width: 768px) {
   .comments {
     @include column;
@@ -175,7 +177,7 @@
   }
 }
 
-/* styling for desktop from 1440px */
+/* Default CSS styling for desktop 1440px */
 @media (min-width: 1440px) {
   .comments {
     width: 712px;

@@ -8,7 +8,13 @@ function Hero() {
           <div className="play">
             <img src="assets/Icons/PNG/Icon-play.png" />
           </div>
+
           <div className="progressbar">
+            <img
+              src="assets/Icons/PNG/Icon-scrubber-control.png"
+              id="scrubber"
+            />
+
             <div className="progressbar__line" />
             <p> 0:00 /0:42</p>
           </div>
@@ -19,6 +25,7 @@ function Hero() {
             <img src="assets/Icons/PNG/Icon-volume.png" />
           </div>
         </div>
+
         <div className="bigVid">
           <video width="100%" poster="assets/Images/video-list-0.jpg">
             <source

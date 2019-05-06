@@ -57,7 +57,7 @@
     }
   }
 }
-
+/* Default CSS styling for tablet 768px */
 @media (min-width: 768px) {
   .nav {
     flex-direction: row;
@@ -83,6 +83,7 @@
   }
 }
 
+/* Default CSS styling for desktop 1440px */
 @media (min-width: 1440px) {
   .nav {
     margin-left: 180px;

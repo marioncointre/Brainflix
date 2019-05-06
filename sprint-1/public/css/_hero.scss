@@ -21,8 +21,7 @@
     .video__icons {
       padding-left: 5%;
       padding-right: 5%;
-      display: flex;
-      flex-direction: row;
+      @include row;
       top: 80%;
       position: absolute;
       z-index: 1;
@@ -54,12 +53,17 @@
       align-items: center;
       margin-right: 8px;
       z-index: 1;
+      border-radius: 4px;
 
       &__line {
         min-height: 5px;
         min-width: 85%;
         background-color: black;
         z-index: 2;
+      }
+
+      #scrubber {
+        width: 10px;
       }
       p {
         display: none;
@@ -68,6 +72,7 @@
   }
 }
 
+/* Default CSS styling for tablet 768px */
 @media (min-width: 768px) {
   .hero {
     flex-direction: row;
@@ -123,6 +128,8 @@
     }
   }
 }
+
+/* Default CSS styling for desktop 1440px */
 
 @media (min-width: 1440px) {
   .hero {
