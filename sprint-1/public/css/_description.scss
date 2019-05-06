@@ -1,4 +1,4 @@
-.test {
+.section {
   display: flex;
   flex-direction: column;
 }
@@ -119,14 +119,14 @@
 
       .description {
         margin-bottom: 64px;
-        width: 496px;
+        width: 68%;
       }
     }
   }
 }
 
 @media (min-width: 1440px) {
-  .test {
+  .section {
     display: flex;
     flex-direction: row;
   }
@@ -154,7 +154,7 @@
 
   .description {
     p {
-      width: 528px;
+      width: 74%;
     }
   }
 }

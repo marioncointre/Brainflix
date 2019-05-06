@@ -275,13 +275,19 @@ a {
 }
 
 .hero__video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
 }
 
 .hero__video .bigVid video {
   -o-object-fit: cover;
      object-fit: cover;
-  min-height: 183px;
+  min-height: 57%;
   width: 100%;
 }
 
@@ -317,8 +323,9 @@ a {
           align-items: center;
   margin-right: 8px;
   height: 25px;
-  width: 25px;
+  width: 35px;
   background-color: rgba(1, 1, 1, 0.6);
+  border-radius: 4px;
 }
 
 .hero__video .play img,
@@ -329,8 +336,8 @@ a {
 
 .hero__video .progressbar {
   background-color: rgba(1, 1, 1, 0.6);
-  width: 180px;
-  height: 25px;
+  min-width: 180px;
+  min-height: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,8 +352,8 @@ a {
 }
 
 .hero__video .progressbar__line {
-  height: 5px;
-  width: 85%;
+  min-height: 5px;
+  min-width: 85%;
   background-color: black;
   z-index: 2;
 }
@@ -368,7 +375,10 @@ a {
     margin-bottom: 48px;
   }
   .hero__video {
-    width: 700px;
+    min-width: 90%;
+  }
+  .hero__video .bigVid {
+    line-height: 0;
   }
   .hero__video .bigVid video {
     min-height: 400px;
@@ -411,11 +421,11 @@ a {
     margin-bottom: 40px;
   }
   .hero__video {
-    width: 944px;
+    min-width: 65%;
   }
   .hero__video .bigVid video {
-    height: 540px;
-    width: 944px;
+    min-height: 540px;
+    min-width: 944px;
   }
   .hero__video .video__icons {
     padding-left: 2%;
@@ -427,7 +437,7 @@ a {
   }
 }
 
-.test {
+.section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -583,12 +593,12 @@ a {
   }
   .intro .info .description {
     margin-bottom: 64px;
-    width: 496px;
+    width: 68%;
   }
 }
 
 @media (min-width: 1440px) {
-  .test {
+  .section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -626,7 +636,7 @@ a {
     float: right;
   }
   .description p {
-    width: 528px;
+    width: 74%;
   }
 }
 
@@ -990,7 +1000,6 @@ a {
   .comments .form #myForm .formComment textarea {
     height: 48px;
     margin-right: 16px;
-    width: 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
@@ -999,9 +1008,6 @@ a {
     margin-bottom: 0;
   }
   .comments__table {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1009,34 +1015,18 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
   .comments__table .published__img {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     width: 6%;
     margin-right: 24px;
   }
   .comments__table .published__body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     width: 624px;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -1059,44 +1049,17 @@ a {
     width: 712px;
     margin-left: 180px;
   }
-  .comments__title,
-  .comments h4 {
+  .comments__title {
     -ms-flex-item-align: start;
         align-self: flex-start;
   }
-  .comments h4 {
-    margin-left: 72px;
-  }
-  .comments .form {
-    margin-right: 40px;
-    margin-left: 16px;
-  }
-  .comments .form #myForm {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  .comments .form #myForm .formComment {
-    margin-right: 16px;
-    margin-bottom: 0;
-    width: 440px;
+  .comments .formComment {
     height: 48px;
   }
-  .comments .form #myForm .formComment textarea {
-    margin-right: 16px;
+  .comments .formComment textarea {
     width: 100%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
   }
-  .comments .form #myForm button {
-    width: 160px;
-    margin-bottom: 0;
-  }
-  .comments__table {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+  __table .published__img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1104,22 +1067,8 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
-  .comments__table .published__img {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 6%;
-    margin-right: 24px;
-  }
-  .comments__table .published__body {
+  __table .published__body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1132,16 +1081,8 @@ a {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    width: 624px;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
   }
-  .comments__table .published__body .username,
-  .comments__table .published__body .date {
-    padding-bottom: 10px;
-  }
-  .comments__table .published__body .input {
+  __table .published__body .input {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;

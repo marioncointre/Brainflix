@@ -14,8 +14,7 @@
     }
 
     .form {
-      display: flex;
-      flex-direction: row;
+      @include row;
       align-items: center;
       border-bottom: 1px solid $mercury-color;
       padding-bottom: 24px;
@@ -28,8 +27,7 @@
       }
 
       #myForm {
-        display: flex;
-        flex-direction: column;
+        @include column;
         align-items: center;
         width: 100%;
         margin-left: 16px;
@@ -79,8 +77,7 @@
           justify-content: center;
         }
         &__icon {
-          display: flex;
-          flex-direction: column;
+          @include column;
           width: 40px;
           height: 40px;
           border-radius: 50%;
@@ -111,8 +108,7 @@
 /* styling for tablet from 768px */
 @media (min-width: 768px) {
   .comments {
-    display: flex;
-    flex-direction: column;
+    @include column;
     align-items: center;
 
     &__title,
@@ -123,6 +119,7 @@
     h4 {
       margin-left: 72px;
     }
+
     .form {
       margin-right: 40px;
       margin-left: 16px;
@@ -138,7 +135,6 @@
           textarea {
             height: 48px;
             margin-right: 16px;
-            width: 100%;
             box-sizing: border-box;
           }
         }
@@ -151,22 +147,17 @@
     }
 
     &__table {
+      @include column;
       justify-content: center;
-      display: flex;
-      flex-direction: column;
       align-items: center;
 
       .published {
         &__img {
-          @include column;
           width: 6%;
           margin-right: 24px;
         }
 
         &__body {
-          @include row;
-          align-items: center;
-          flex-wrap: wrap;
           width: 624px;
           justify-content: flex-start;
 
@@ -190,69 +181,32 @@
     width: 712px;
     margin-left: 180px;
 
-    &__title,
-    h4 {
+    &__title {
       align-self: flex-start;
     }
 
-    h4 {
-      margin-left: 72px;
-    }
-    .form {
-      margin-right: 40px;
-      margin-left: 16px;
+    .formComment {
+      height: 48px;
 
-      #myForm {
-        flex-direction: row;
-
-        .formComment {
-          margin-right: 16px;
-          margin-bottom: 0;
-          width: 440px;
-          height: 48px;
-
-          textarea {
-            margin-right: 16px;
-            width: 100%;
-            box-sizing: border-box;
-          }
-        }
-
-        button {
-          width: 160px;
-          margin-bottom: 0;
-        }
+      textarea {
+        width: 100%;
       }
     }
+  }
 
-    &__table {
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  &__table {
+    .published {
+      &__img {
+        @include column;
+      }
 
-      .published {
-        &__img {
-          @include column;
-          width: 6%;
-          margin-right: 24px;
-        }
+      &__body {
+        @include row;
+        align-items: center;
+        flex-wrap: wrap;
 
-        &__body {
-          @include row;
-          align-items: center;
-          flex-wrap: wrap;
-          width: 624px;
-          justify-content: flex-start;
-
-          .username,
-          .date {
-            padding-bottom: 10px;
-          }
-
-          .input {
-            flex: 1 1 100%;
-          }
+        .input {
+          flex: 1 1 100%;
         }
       }
     }

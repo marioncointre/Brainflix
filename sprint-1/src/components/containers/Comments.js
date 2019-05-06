@@ -1,38 +1,41 @@
 import React from "react";
 
-const commentsTable = [
-  {
-    nameIcon: "",
-    commentDate: "12/18/2018",
-    userName: "Micheal Lyons",
-    commentInput:
-      "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed."
-  },
-  {
-    nameIcon: "",
-    commentDate: "12/18/2018",
-    userName: "Gary Wong",
-    commentInput:
-      "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!"
-  },
-  {
-    nameIcon: "",
-    commentDate: "11/15/2018",
-    userName: "Theodore Duncan",
-    commentInput:
-      "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!"
+class Comments extends React.Component {
+  state = {
+    commentsTable: [
+      {
+        nameIcon: "",
+        commentDate: "12/18/2018",
+        userName: "Micheal Lyons",
+        commentInput:
+          "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed."
+      },
+      {
+        nameIcon: "",
+        commentDate: "12/18/2018",
+        userName: "Gary Wong",
+        commentInput:
+          "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!"
+      },
+      {
+        nameIcon: "",
+        commentDate: "11/15/2018",
+        userName: "Theodore Duncan",
+        commentInput:
+          "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!"
+      }
+    ]
+  };
+
+  render() {
+    return (
+      <div className="comments">
+        <CommentDiv />
+        <CommentList comments={this.state.commentsTable} />
+      </div>
+    );
   }
-];
-
-function Comments() {
-  return (
-    <div className="comments">
-      <CommentDiv />
-      <CommentList comments={commentsTable} />
-    </div>
-  );
 }
-
 function CommentDiv() {
   return (
     <>
@@ -66,7 +69,7 @@ function Form() {
 }
 
 function CommentList(props) {
-  const comments = props.comments.map(function(com) {
+  const commentList = props.comments.map(function(com) {
     return (
       <Com
         nameIcon={com.nameIcon}
@@ -76,7 +79,7 @@ function CommentList(props) {
       />
     );
   });
-  return <div className="comments__table">{comments}</div>;
+  return <div className="comments__table">{commentList}</div>;
 }
 
 function Com(props) {

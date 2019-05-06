@@ -7,17 +7,18 @@
   align-items: center;
 
   &__video {
+    display: flex;
+    justify-content: center;
     position: relative;
 
     .bigVid {
       video {
         object-fit: cover;
-        min-height: 183px;
+        min-height: 57%;
         width: 100%;
       }
     }
     .video__icons {
-      // display: none;
       padding-left: 5%;
       padding-right: 5%;
       display: flex;
@@ -36,8 +37,9 @@
       align-items: center;
       margin-right: 8px;
       height: 25px;
-      width: 25px;
+      width: 35px;
       background-color: rgba(1, 1, 1, 0.6);
+      border-radius: 4px;
 
       img {
         height: 18px;
@@ -45,9 +47,8 @@
     }
     .progressbar {
       background-color: rgba(1, 1, 1, 0.6);
-      // opacity: 0.5;
-      width: 180px;
-      height: 25px;
+      min-width: 180px;
+      min-height: 25px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -55,8 +56,8 @@
       z-index: 1;
 
       &__line {
-        height: 5px;
-        width: 85%;
+        min-height: 5px;
+        min-width: 85%;
         background-color: black;
         z-index: 2;
       }
@@ -75,9 +76,11 @@
     margin-bottom: 48px;
 
     &__video {
-      width: 700px;
+      min-width: 90%;
 
       .bigVid {
+        line-height: 0;
+
         video {
           min-height: 400px;
           width: 700px;
@@ -126,12 +129,12 @@
     margin-bottom: 40px;
 
     &__video {
-      width: 944px;
+      min-width: 65%;
 
       .bigVid {
         video {
-          height: 540px;
-          width: 944px;
+          min-height: 540px;
+          min-width: 944px;
         }
       }
       .video__icons {
