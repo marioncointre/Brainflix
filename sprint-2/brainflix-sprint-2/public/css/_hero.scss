@@ -1,0 +1,158 @@
+.hero {
+  max-width: 100%;
+  margin-bottom: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__video {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .bigVid {
+      video {
+        object-fit: cover;
+        min-height: 57%;
+        width: 100%;
+      }
+    }
+    .video__icons {
+      padding-left: 5%;
+      padding-right: 5%;
+      @include row;
+      top: 80%;
+      position: absolute;
+      z-index: 1;
+      align-items: center;
+    }
+
+    .play,
+    .fullscreen,
+    .volume {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+      height: 25px;
+      width: 35px;
+      background-color: rgba(1, 1, 1, 0.6);
+      border-radius: 4px;
+
+      img {
+        height: 18px;
+      }
+    }
+    .progressbar {
+      background-color: rgba(1, 1, 1, 0.6);
+      min-width: 180px;
+      min-height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+      z-index: 1;
+      border-radius: 4px;
+
+      &__line {
+        min-height: 5px;
+        min-width: 85%;
+        background-color: black;
+        z-index: 2;
+      }
+
+      #scrubber {
+        width: 10px;
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+}
+
+/* Default CSS styling for tablet 768px */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    background-color: black;
+    justify-content: center;
+    margin-bottom: 48px;
+
+    &__video {
+      min-width: 90%;
+
+      .bigVid {
+        line-height: 0;
+
+        video {
+          min-height: 400px;
+          width: 700px;
+        }
+      }
+      .video__icons {
+        padding-left: 1%;
+        padding-right: 1%;
+        top: 90%;
+      }
+
+      .play {
+        margin-right: 16px;
+      }
+
+      .fullscreen,
+      .volume {
+        margin-right: 0px;
+        padding-right: 10px;
+      }
+
+      .progressbar {
+        width: 519px;
+        margin-right: 16px;
+
+        &__line {
+          height: 5px;
+          width: 85%;
+          background-color: black;
+          z-index: 2;
+        }
+        p {
+          display: unset;
+          color: white;
+          font-size: 10px;
+          font-weight: $font-demibold;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+/* Default CSS styling for desktop 1440px */
+
+@media (min-width: 1440px) {
+  .hero {
+    margin-bottom: 40px;
+
+    &__video {
+      min-width: 65%;
+
+      .bigVid {
+        video {
+          min-height: 540px;
+          min-width: 944px;
+        }
+      }
+      .video__icons {
+        padding-left: 2%;
+        padding-right: 2%;
+        top: 90%;
+      }
+
+      .progressbar {
+        width: 751px;
+      }
+    }
+  }
+}
