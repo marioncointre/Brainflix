@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./index.css";
-import App from "./App";
+import App from "./components/App";
 import VideoUploader from "./components/containers/VideoUploader";
 import * as serviceWorker from "./serviceWorker";
 
@@ -10,7 +10,6 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/" exact component={App} />
-      {/* <Route path="/main-video" component={MainVid} /> */}
       <Route path="/upload-video" component={VideoUploader} />
     </Switch>
   </BrowserRouter>,

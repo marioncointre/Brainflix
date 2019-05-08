@@ -1,18 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div class="nav">
+    <div className="nav">
       <div className="logo">
-        <a href="/">
+        <Link to="/">
           <img src="assets/Logo/Logo-brainflix.svg" />
-        </a>
+        </Link>
       </div>
       <input type="text" name="search" id="search" placeholder="Search" />
 
       <div className="upload">
         <button className="button">
-          <img src="../assets/Icons/SVG/Icon-upload.svg" /> UPLOAD
+          <Link to="/upload-video">
+            <img src="../assets/Icons/SVG/Icon-upload.svg" /> UPLOAD
+          </Link>
         </button>
         <img src="assets/Images/Mohan-muruge.jpg" className="icon" />
       </div>
