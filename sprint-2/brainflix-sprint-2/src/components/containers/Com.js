@@ -5,14 +5,16 @@ class Com extends Component {
     const { name, comment, id, likes, timestamp } = this.props;
     return (
       <>
-        <div className="published">
-          <div className="published__img">
-            <div className="published__icon">{""}</div>
-          </div>
-          <div className="published__body">
-            <p className="username">{name}</p>
-            <p className="date">{timestamp}</p>
-            <div className="input">{comment}</div>
+        <div class="comments__table">
+          <div className="published">
+            <div className="published__img">
+              <div className="published__icon">{""}</div>
+            </div>
+            <div className="published__body">
+              <p className="username">{name}</p>
+              <p className="date">{timestamp}</p>
+              <div className="input">{comment}</div>
+            </div>
           </div>
         </div>
       </>

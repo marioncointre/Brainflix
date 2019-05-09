@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CommentList from "./CommentList";
+import CommentList from "./containers/CommentList";
 import axios from "axios";
 
 const commentsUrl =
@@ -31,7 +31,6 @@ class Comments_URL extends Component {
   render() {
     return (
       <div>
-        <h1 className="header">Comments</h1>
         <CommentList commentsTable={this.state.commentsTable} />
       </div>
     );

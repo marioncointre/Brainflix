@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import Com_form from "./Com_form";
 import Com from "./Com";
 
-class CommentList extends React.Component {
+class CommentList extends Component {
   render() {
     return (
       <>

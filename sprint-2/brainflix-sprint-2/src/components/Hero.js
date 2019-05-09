@@ -28,10 +28,7 @@ function Hero() {
 
         <div className="bigVid">
           <video width="100%" poster="assets/Images/video-list-0.jpg">
-            <source
-              src="assets/Video/BrainStation_Video.mp4"
-              type="video/mp4"
-            />
+            <source src="{props.match.params.vidid}" type="video/mp4" />
           </video>
         </div>
       </div>

@@ -137,6 +137,11 @@
       @include column;
       width: 100%;
       float: left;
+      padding-top: 40px;
+
+      hr {
+        width: 52.5vw;
+      }
     }
     aside {
       width: 45%;
