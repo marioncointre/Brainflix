@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import VideoList from "./containers/VideoList";
-import VideoPass from "./VideoPass";
 import axios from "axios";
 
 const videosUrl = "https://project-2-api.herokuapp.com/videos?api_key=labKey";
@@ -31,7 +30,6 @@ class Video_URL extends Component {
     return (
       <div>
         <VideoList videosTable={this.state.videosTable} />
-        {/* <VideoPass videosTable={this.state.videosTable} /> */}
       </div>
     );
   }

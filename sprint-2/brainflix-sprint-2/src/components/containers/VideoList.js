@@ -1,4 +1,6 @@
-import React, { Link, Component } from "react";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import Video from "./Video";
 
 class VideoList extends Component {
@@ -8,16 +10,14 @@ class VideoList extends Component {
         <label>Next video</label>
         {this.props.videosTable.map(video => {
           return (
-            <>
-              <Link to={this.props.match.url + "/" + video.id}>
-                <Video
-                  id={video.id}
-                  title={video.title}
-                  channel={video.channel}
-                  image={video.image}
-                />
-              </Link>
-            </>
+            <Link to={`/video/${video.id}`}>
+              <Video
+                id={video.id}
+                title={video.title}
+                channel={video.channel}
+                image={video.image}
+              />
+            </Link>
           );
         })}
       </div>

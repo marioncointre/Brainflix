@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./index.css";
 import App from "./components/App";
 import VideoUploader from "./components/containers/VideoUploader";
-import Video from "./components/containers/Video";
+import Hero from "./components/Hero";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
@@ -12,7 +12,6 @@ ReactDOM.render(
     <Switch>
       <Route path="/" exact component={App} />
       <Route path="/upload-video" component={VideoUploader} />
-      <Route path="/:video-url" component={Video} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
