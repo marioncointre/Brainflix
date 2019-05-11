@@ -1,0 +1,23 @@
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin button {
+  .button {
+    background-color: $brainflix-blue;
+    margin-right: 16px;
+    height: 48px;
+    width: 100%;
+    color: $primary-color;
+    font-weight: $font-bold;
+    border-radius: 4px;
+    font-family: "Avenir";
+    font-size: 16px;
+  }
+}
