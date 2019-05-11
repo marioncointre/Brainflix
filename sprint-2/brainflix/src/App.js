@@ -19,7 +19,7 @@ class App extends React.Component {
       });
     });
   }
-
+  // rendering the main homepage
   render() {
     const { videos } = this.state;
     return (
@@ -41,22 +41,32 @@ class App extends React.Component {
     );
   }
 }
-
+//videos containing axios props
 const Videos = props => {
   const { videos } = props;
+  //execution of the function mapping through videos
   const videoList = videos.map(video => {
     return (
       <Link to={`/video/${video.id}`}>
-        <Video
+        {/* <Video
           id={video.id}
           title={video.title}
           channel={video.channel}
           image={video.image}
-        />
+        /> */}
+        <div className="video">
+          <div className="video__image">
+            <img src={video.image} />
+          </div>
+          <div className="video__content">
+            <div className="video__title">{video.title}</div>
+            <div className="video__author">{video.channel}</div>
+          </div>
+        </div>
       </Link>
     );
   });
-
+  // rendering of html after function mapping
   return (
     <>
       <div className="aside">
