@@ -43,8 +43,26 @@ class App extends React.Component {
 }
 //videos containing axios props
 const Videos = props => {
+  console.log(props);
   const { videos } = props;
   //execution of the function mapping through videos
+  const videoDefault = videos.filter(video => {
+    return (
+      //returning side video list
+      <Link to={`/video/${video.id}`}>
+        <div className="video">
+          <div className="video__image">
+            <img src={video.image} />
+          </div>
+          <div className="video__content">
+            <div className="video__title">{video.title}</div>
+            <div className="video__author">{video.channel}</div>
+          </div>
+        </div>
+      </Link>
+    );
+  });
+
   const videoList = videos.map(video => {
     return (
       //returning side video list
@@ -87,11 +105,11 @@ const Videos = props => {
                 </div>
                 <div className="stats">
                   <div className="views">
-                    <img src="public/assets/Icons/SVG/Icon-fullscreen.svg" />
+                    <img src="assets/Icons/SVG/Icon-fullscreen.svg" />
                     <p>1,001,023</p>
                   </div>
                   <div className="likes">
-                    <img src="assets/Icons/PNG/Icon-likes.png" />
+                    <img src="assets/Icons/SVG/Icon-likes.svg" />
                     <p>110,985</p>
                   </div>
                 </div>

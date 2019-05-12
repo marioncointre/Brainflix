@@ -90,7 +90,8 @@ class VideoPage extends React.Component {
           {/* VIDEO LIST BEGINS*/}
           <div className="aside">
             <label>Next video</label>
-            {/* <div>{videoList}</div> */}
+            {/* <div>{videoprops.videoList}</div>
+            <div>{videoprops.videos}</div> */}
           </div>
           {/* VIDEO LIST ENDS*/}
         </div>
