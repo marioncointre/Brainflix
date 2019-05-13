@@ -1,0 +1,183 @@
+/* Default CSS styling for mobile 320px */
+
+.video__uploader {
+  @include column;
+  margin-left: 16px;
+  margin-right: 16px;
+  .video__content {
+    .video__example {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  img {
+    width: 288px;
+    height: 153px;
+    margin-bottom: 32px;
+    border-radius: 4px;
+  }
+  label {
+    color: $silver-color;
+    font-weight: $font-bold;
+  }
+  h1 {
+    margin-top: 24px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid $mercury-color;
+    margin-bottom: 40px;
+  }
+  #videotitle {
+    height: 50px;
+    margin-bottom: 24px;
+  }
+
+  #videodescription {
+    height: 143px;
+    margin-bottom: 32px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input,
+    textarea {
+      border: 1px solid $silver-color;
+      border-radius: 4px;
+      background-color: $lightgrey;
+
+      &::placeholder {
+        padding-top: 10px;
+        padding-left: 10px;
+      }
+
+      textarea {
+        &::placeholder {
+          top: 10px;
+          padding-left: 10px;
+        }
+      }
+    }
+    // #videodescription {
+    //   &::placeholder {
+    //     top: 10px;
+    //     padding-left: 10px;
+    //   }
+    // }
+
+    .form__buttons {
+      display: flex;
+      flex-direction: column;
+
+      #publish,
+      #cancel {
+        margin-right: 16px;
+        height: 48px;
+        font-weight: $font-bold;
+        border-radius: 4px;
+        font-family: "Avenir";
+        font-size: 16px;
+      }
+
+      #publish {
+        background-color: $brainflix-blue;
+        color: $primary-color;
+        font-weight: $font-bold;
+        margin-bottom: 24px;
+        width: 100%;
+      }
+      #cancel {
+        color: $brainflix-blue;
+        font-weight: $font-bold;
+      }
+    }
+  }
+}
+
+/* Default CSS styling for tablet 768px */
+
+@media (min-width: 768px) {
+  .video__uploader {
+    margin-left: 24px;
+    margin-right: 24px;
+    img {
+      width: 344px;
+      height: 183px;
+      margin-bottom: 40px;
+    }
+
+    #videodescription {
+      margin-bottom: 40px;
+    }
+
+    form {
+      .form__buttons {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+
+        #publish {
+          background-color: $brainflix-blue;
+          color: $primary-color;
+          font-weight: $font-bold;
+          margin-bottom: 24px;
+          width: 160px;
+        }
+        #cancel {
+          color: $brainflix-blue;
+          font-weight: $font-bold;
+          margin-right: 48px;
+        }
+      }
+    }
+  }
+}
+
+/* Default CSS styling for tablet 1440px */
+
+@media (min-width: 1440px) {
+  .video__uploader {
+    margin-left: 180px;
+    margin-right: 180px;
+    .video__content {
+      display: flex;
+      flex-direction: row;
+      .video__example {
+        width: 24%;
+      }
+    }
+    img {
+      width: 344px;
+      height: 183px;
+      margin-bottom: 0;
+      margin-right: 24px;
+    }
+
+    #videodescription {
+      margin-bottom: 24px;
+    }
+
+    form {
+      width: 76%;
+      .form__buttons {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+
+        #publish {
+          background-color: $brainflix-blue;
+          color: $primary-color;
+          font-weight: $font-bold;
+          margin-bottom: 24px;
+          width: 160px;
+        }
+        #cancel {
+          color: $brainflix-blue;
+          font-weight: $font-bold;
+          margin-right: 48px;
+        }
+      }
+    }
+  }
+}

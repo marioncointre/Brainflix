@@ -1,0 +1,43 @@
+@import "colors";
+@import "fonts";
+@import "mixens";
+@import "header";
+@import "hero";
+@import "description";
+@import "videos";
+@import "comments2";
+@import "videouploader";
+
+/* Resetting  user agent styling */
+html,
+body,
+ul,
+button,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  color: #323232;
+  font-family: "Avenir";
+  overflow-x: hidden;
+}
+/* Resetting  user agent styling */
+button,
+input,
+hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+button {
+  background-color: white;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
