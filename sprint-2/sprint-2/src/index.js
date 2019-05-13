@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import App from "./App";
-import VideoUploader from "./VideoUploader";
-import VideoPage from "./VideoPage";
+import VideoUploader from "./Components/VideoUploader";
+import VideoPage from "./Components/VideoPage";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(

@@ -1,14 +1,11 @@
 import React from "react";
-import Mohan from "./assets/Images/Mohan-muruge.jpg";
+import Mohan from "../assets/Images/Mohan-muruge.jpg";
 
 class Comments2 extends React.Component {
   render() {
     const commentsTable = this.props;
-    console.log(commentsTable);
     const commentsNb = commentsTable.commentsTable.length;
-    console.log(commentsNb);
     const commentsContent = this.props.commentsTable;
-    console.log(commentsContent);
 
     if (Object.keys(commentsTable).length === 0) return <div>loading...</div>;
 
@@ -40,7 +37,6 @@ class Comments2 extends React.Component {
 }
 const CommentList = props => {
   const { commentsContent } = props;
-  console.log(commentsContent);
   const commentslist = commentsContent.map(com => {
     if (Object.keys(CommentList).length !== 0);
     return (

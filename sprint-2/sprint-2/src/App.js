@@ -1,11 +1,12 @@
 import React from "react";
+import { BrowserRouter, Switch, Route, Router } from "react-router-dom";
 import axios from "axios";
 import "./css/app.css";
-import Header from "./Header";
-import Hero from "./Hero";
-import Comments2 from "./Comments2";
-import VideoList from "./VideoList";
-import Description from "./Description";
+import Header from "./Components/Header";
+import Hero from "./Components/Hero";
+import Comments2 from "./Components/Comments2";
+import VideoList from "./Components/containers/VideoList";
+import Description from "./Components/Description";
 
 class App extends React.Component {
   state = {
@@ -60,29 +61,28 @@ class App extends React.Component {
       });
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.videoid !== prevProps.videoid) {
-      const videoidUrl = `https://project-2-api.herokuapp.com/videos/${
-        this.props.videoid
-      }?api_key=labKey`;
-      console.log(this.props.videoid);
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.videoid !== prevProps.videoid) {
+  //     const videoidUrl = `https://project-2-api.herokuapp.com/videos/${
+  //       this.props.videoid
+  //     }?api_key=labKey`;
 
-      axios.get(videoidUrl).then(response => {
-        this.setState({
-          singleVid: {
-            title: response.data.title,
-            channel: response.data.channel,
-            description: response.data.description,
-            image: response.data.image,
-            timestamp: response.data.timestamp,
-            views: response.data.views,
-            likes: response.data.likes,
-            commentsTables: response.data.comments
-          }
-        });
-      });
-    }
-  }
+  //     axios.get(videoidUrl).then(response => {
+  //       this.setState({
+  //         singleVid: {
+  //           title: response.data.title,
+  //           channel: response.data.channel,
+  //           description: response.data.description,
+  //           image: response.data.image,
+  //           timestamp: response.data.timestamp,
+  //           views: response.data.views,
+  //           likes: response.data.likes,
+  //           commentsTables: response.data.comments
+  //         }
+  //       });
+  //     });
+  //   }
+  // }
 
   render() {
     return (
@@ -95,7 +95,10 @@ class App extends React.Component {
               <Description singleVid={this.state.singleVid} />
               <Comments2 commentsTable={this.state.singleVid.commentsTables} />
             </div>
-            <VideoList videos={this.state.videos} />
+            <VideoList
+              videos={this.state.videos}
+              videoid={this.state.singleVid.videoid}
+            />
           </div>
         </div>
       </>

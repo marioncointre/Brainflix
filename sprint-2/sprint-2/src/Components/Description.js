@@ -1,6 +1,6 @@
 import React from "react";
-import views from "./assets/Icons/PNG/Icon-views.png";
-import likes from "./assets/Icons/PNG/Icon-likes.png";
+import views from "../assets/Icons/PNG/Icon-views.png";
+import likes from "../assets/Icons/PNG/Icon-likes.png";
 
 class Description extends React.Component {
   render() {

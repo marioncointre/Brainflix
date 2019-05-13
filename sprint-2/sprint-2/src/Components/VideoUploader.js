@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import preview from "./assets/Images/Upload-video-preview.jpg";
+import preview from "../assets/Images/Upload-video-preview.jpg";
 
 class VideoUploader extends React.Component {
   render() {
