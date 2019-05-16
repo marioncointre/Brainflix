@@ -4,13 +4,13 @@ import axios from "axios";
 
 class CommentForm extends React.Component {
   render() {
-    const commentsForm = this.props.updatecoms;
-    console.log(commentsForm);
+    const updatecoms = this.props.updatecoms;
+    console.log(updatecoms);
 
     const submitHandler = event => {
       event.preventDefault();
       const commentinput = event.target;
-      commentsForm(commentinput.Comment.value);
+      updatecoms(commentinput.Comment.value);
       commentinput.Comment.value = "";
     };
 
@@ -38,26 +38,5 @@ class CommentForm extends React.Component {
     );
   }
 }
-
-// function updatecomments(props) {
-//   const submitHandler = event => {
-//     event.preventDefault();
-//     const form = event.target;
-
-//     props.updatecomments(form.commentInput.value);
-//     form.commentInput.value = "";
-//   };
-
-//   return (
-//     <form onSubmit={submitHandler}>
-//       <textarea
-//         className="form__comment"
-//         type="text"
-//         name="commentInput"
-//         placeholder="That was easily the most spectacular BMX moment ever."
-//       />
-//       <button className="form__button">COMMENT</button>
-//     </form>
-//   );
 
 export default CommentForm;

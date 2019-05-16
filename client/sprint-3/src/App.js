@@ -18,7 +18,7 @@ class App extends React.Component {
       timestamp: " ",
       views: " ",
       likes: " ",
-      commentsTables: []
+      commentsT: []
     }
   };
 
@@ -53,7 +53,7 @@ class App extends React.Component {
               timestamp: response.data.timestamp,
               views: response.data.views,
               likes: response.data.likes,
-              commentsTables: response.data.comments
+              commentsT: response.data.comments
             }
           });
         });
@@ -76,22 +76,32 @@ class App extends React.Component {
             timestamp: response.data.timestamp,
             views: response.data.views,
             likes: response.data.likes,
-            commentsTables: response.data.comments
+            commentsT: response.data.comments
           }
         });
       });
     }
   }
 
-  render() {
-    const updatecoms = video => {
-      return this.setState({
-        singleVid: {
-          commentsTables: ""
-        }
-      });
+  updatecoms = comment => {
+    const newComment = {
+      comment: comment,
+      id: "",
+      likes: 0,
+      name: "Mohan",
+      timestamp: new Date()
     };
+    this.state.singleVid.commentsT.push(newComment);
 
+    return this.setState({
+      singleVid: {
+        ...this.state.singleVid,
+        commentsT: this.state.singleVid.commentsT
+      }
+    });
+  };
+
+  render() {
     return (
       <>
         <div className="App">
@@ -101,8 +111,8 @@ class App extends React.Component {
             <div className="main">
               <Description singleVid={this.state.singleVid} />
               <Comments
-                commentsTable={this.state.singleVid.commentsTables}
-                updatecoms={updatecoms()}
+                commentsT={this.state.singleVid.commentsT}
+                updatecoms={this.updatecoms}
               />
             </div>
             <VideoList
