@@ -1,0 +1,152 @@
+/* Default CSS styling for mobile 320px */
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro {
+  max-width: 100%;
+  margin-left: 16px;
+  margin-right: 16px;
+
+  .info {
+    @include column;
+    align-content: center;
+
+    h1 {
+      margin-bottom: 16px;
+    }
+
+    .title {
+      @include column;
+      margin-bottom: 24px;
+
+      .author,
+      .stats,
+      .views,
+      .likes {
+        @include row;
+        align-items: center;
+      }
+
+      .author {
+        margin-bottom: 32px;
+
+        p {
+          color: $silver-color;
+        }
+
+        h2 {
+          margin-right: 8px;
+        }
+      }
+
+      .stats {
+        padding-bottom: 24px;
+        border-bottom: 1px solid $mercury-color;
+
+        .views img,
+        .likes img {
+          margin-right: 8px;
+        }
+
+        .views {
+          margin-right: 16px;
+        }
+      }
+    }
+
+    hr {
+      display: none;
+    }
+
+    .description {
+      text-align: left;
+      margin-bottom: 40px;
+      line-height: 25px;
+    }
+  }
+}
+
+/* Default CSS styling for tablet 768px */
+@media (min-width: 768px) {
+  .intro {
+    flex-direction: row;
+    margin-left: 24px;
+    margin-right: 24px;
+
+    .info {
+      .title {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        h1 {
+          margin-bottom: 24px;
+        }
+
+        .author {
+          margin-bottom: 0px;
+        }
+        .stats {
+          padding-bottom: 0px;
+          border-bottom: 0px;
+          margin-bottom: 0px;
+
+          .views {
+            margin-right: 24px;
+          }
+        }
+      }
+      hr {
+        display: unset;
+        border: 1px solid $mercury-color;
+        margin-bottom: 40px;
+      }
+
+      .description {
+        margin-bottom: 64px;
+        width: 68%;
+      }
+    }
+  }
+}
+
+/* Default CSS styling for desktop 1440px */
+@media (min-width: 1440px) {
+  .section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .main {
+    @include column;
+    width: 100%;
+  }
+
+  .intro {
+    margin-left: 180px;
+    width: 712px;
+
+    .info {
+      @include column;
+      width: 100%;
+      float: left;
+      padding-top: 40px;
+
+      hr {
+        width: 52.5vw;
+      }
+    }
+    aside {
+      width: 45%;
+      float: right;
+    }
+  }
+}
