@@ -1,11 +1,9 @@
 import React from "react";
 import Mohan from "../assets/Images/Mohan-muruge.jpg";
-import axios from "axios";
 
 class CommentForm extends React.Component {
   render() {
     const updatecoms = this.props.updatecoms;
-    console.log(updatecoms);
 
     const submitHandler = event => {
       event.preventDefault();
@@ -38,5 +36,20 @@ class CommentForm extends React.Component {
     );
   }
 }
+// function createComment(comment) {
+//   axios
+//     .post("https://project-1-api.herokuapp.com/comments?api_key=authkey", {
+//       name: name,
+//       comment: comment
+//     })
+//     .then(response => {
+//       comments.push(response.data);
+//       document.getElementById("myForm").reset();
+//       displayComments(comments);
+//     })
+//     .catch(error => {
+//       console.log("404 error");
+//     });
+// }
 
 export default CommentForm;

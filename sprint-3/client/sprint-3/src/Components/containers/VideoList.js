@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 function VideoList(props) {
   const { videos } = props;
   const videoList = videos.map(video => {
-    // filter out the video
     return (
       <div>
-        <Link to={`/video/${video.id}`}>
+        <Link to={`/videos/${video.id}`}>
           <div className="video">
             <div className="video__image">
               <img src={video.image} />

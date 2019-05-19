@@ -5,10 +5,11 @@ import CommentForm from "./CommentForm";
 class Comments extends React.Component {
   render() {
     const commentsT = this.props;
-    const commentsNb = commentsT.length;
+    console.log(commentsT);
+
     const commentsContent = this.props.commentsT;
+    const commentsNb = commentsContent.length;
     const updatecoms = this.props.updatecoms;
-    console.log(this.props);
 
     if (Object.keys(commentsT).length === 0) return <div>loading...</div>;
 

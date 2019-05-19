@@ -24,10 +24,10 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`https://project-2-api.herokuapp.com/videos?api_key=labKey`)
-      // .get(`https://localhost:8080/videos`)
+      .get(`http://localhost:5000/`)
 
       .then(response => {
+        console.log(response.data);
         const videosArray = response.data.map(videoArray => {
           return {
             id: videoArray.id,
@@ -41,47 +41,43 @@ class App extends React.Component {
           videos: videosArray
         });
 
-        const videoidUrl = `https://project-2-api.herokuapp.com/videos/${
-          response.data[0].id
-        }?api_key=labKey`;
-
-        axios.get(videoidUrl).then(response => {
-          this.setState({
-            singleVid: {
-              title: response.data.title,
-              channel: response.data.channel,
-              description: response.data.description,
-              image: response.data.image,
-              timestamp: response.data.timestamp,
-              views: response.data.views,
-              likes: response.data.likes,
-              commentsT: response.data.comments
-            }
+        axios
+          .get(`http://localhost:5000/videos/1af0jruup5gu`)
+          .then(response => {
+            this.setState({
+              singleVid: {
+                title: response.data[0].title,
+                channel: response.data[0].channel,
+                description: response.data[0].description,
+                image: response.data[0].image,
+                timestamp: response.data[0].timestamp,
+                views: response.data[0].views,
+                likes: response.data[0].likes,
+                commentsT: response.data[0].comments
+              }
+            });
           });
-        });
       });
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.videoid !== prevProps.videoid) {
-      const videoidUrl = `https://project-2-api.herokuapp.com/videos/${
-        this.props.videoid
-      }?api_key=labKey`;
-
-      axios.get(videoidUrl).then(response => {
-        this.setState({
-          singleVid: {
-            title: response.data.title,
-            channel: response.data.channel,
-            description: response.data.description,
-            image: response.data.image,
-            timestamp: response.data.timestamp,
-            views: response.data.views,
-            likes: response.data.likes,
-            commentsT: response.data.comments
-          }
+      axios
+        .get(`http://localhost:5000/videos/${this.props.videoid}`)
+        .then(response => {
+          this.setState({
+            singleVid: {
+              title: response.data[0].title,
+              channel: response.data[0].channel,
+              description: response.data[0].description,
+              image: response.data[0].image,
+              timestamp: response.data[0].timestamp,
+              views: response.data[0].views,
+              likes: response.data[0].likes,
+              commentsT: response.data[0].comments
+            }
+          });
         });
-      });
     }
   }
 
@@ -104,6 +100,8 @@ class App extends React.Component {
   };
 
   render() {
+    console.log(this.state.singleVid);
+
     return (
       <>
         <div className="App">

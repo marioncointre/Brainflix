@@ -11,7 +11,7 @@ ReactDOM.render(
       <Route exact path="/" component={App} />
       <Route path="/upload-video" component={VideoUploader} />
       <Route
-        path="/video/:videoid"
+        path="/videos/:videoid"
         exact
         render={props => {
           return <App videoid={props.match.params.videoid} />;
