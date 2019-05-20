@@ -5,8 +5,6 @@ import preview from "../assets/Images/Upload-video-preview.jpg";
 
 class VideoUploader extends React.Component {
   render(props) {
-    console.log(props);
-    console.log(this.props);
     return (
       <>
         <Header />
@@ -32,23 +30,19 @@ function VideoThumbnail() {
 }
 
 function VideoForm(props) {
+  
   const submitHandler = event => {
     event.preventDefault();
-    const eventtitle = event.target.videotitle;
-    const eventdescr = event.target.videodescription;
-    // console.log(eventtitle.value);
-    // console.log(eventdescr.value);
-
+    const evttitle = event.target.videotitle;
+    const evtdescr = event.target.videodescription;
     axios.post("http://localhost:5000/videos/", {
-      title: eventtitle.value, //body of request
-      description: eventdescr.value
+      title: evttitle.value, //body of request
+      description: evtdescr.value
     });
-eventtitle.value = "";
-eventdescr.value = "";
-
-
-
+    evttitle.value = "";
+    evtdescr.value = "";
   };
+
   return (
     <>
       <form onSubmit={submitHandler}>

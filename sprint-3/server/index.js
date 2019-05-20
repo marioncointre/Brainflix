@@ -6,9 +6,9 @@ const uuid = require("uuidv4");
 const uniqueId = uuid();
 
 app.use(cors());
-
 app.use(express.json());
 
+//data 
 const videos = [
   {
     id: "1af0jruup5gu",
@@ -369,6 +369,8 @@ function generateUniqueId() {
     .substr(2, 9);
 }
 
+
+// get routes
 app.get("/", (req, res) => {
   res.json(videos);
 });
@@ -388,6 +390,7 @@ app.get("/videos/:video", (req, res) => {
   }
 });
 
+//post routes
 app.post("/videos", (req, res) => {
   let newVideo = {
     id: generateUniqueId(),
@@ -404,16 +407,23 @@ app.post("/videos", (req, res) => {
 });
 
 
-app.post("/videos/:video", (req, res) => {
+app.post("/videos/:video/comments", (req, res) => {
 let newComment= {
       name: "Mohan",
-      comment: "req.body.commentinput",
+      comment: req.body.comment,
       id: uuid(),
+      likes: 0,
       timestamp: new Date()
 };
 console.log(newComment)
+console.log(videos[0].comments)
+  videos[0].comments.push(newComment);
+  videos[0].comments.push(newComment);
+
 });
 
+
+// listening
 app.listen(5000, (req, res) => {
   console.log("Listening... on 5000");
 });

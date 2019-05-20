@@ -4,7 +4,7 @@ import "./css/app.css";
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
 import Comments from "./Components/Comments";
-import VideoList from "./Components/containers/VideoList";
+import VideoList from "./Containers/VideoList";
 import Description from "./Components/Description";
 
 class App extends React.Component {
@@ -80,23 +80,23 @@ class App extends React.Component {
     }
   }
 
-  updatecoms = comment => {
-    const newComment = {
-      comment: comment,
-      id: "",
-      likes: 0,
-      name: "Mohan",
-      timestamp: new Date()
-    };
-    this.state.singleVid.commentsT.push(newComment);
+  // updatecoms = comment => {
+  //   const newComment = {
+  //     comment: comment,
+  //     id: "",
+  //     likes: 0,
+  //     name: "Mohan",
+  //     timestamp: new Date()
+  //   };
+  //   this.state.singleVid.commentsT.push(newComment);
 
-    return this.setState({
-      singleVid: {
-        ...this.state.singleVid,
-        commentsT: this.state.singleVid.commentsT
-      }
-    });
-  };
+  //   return this.setState({
+  //     singleVid: {
+  //       ...this.state.singleVid,
+  //       commentsT: this.state.singleVid.commentsT
+  //     }
+  //   });
+  // };
 
   render() {
     return (
