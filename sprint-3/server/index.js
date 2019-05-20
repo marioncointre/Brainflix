@@ -1,6 +1,11 @@
 const http = require("http");
 const express = require("express");
 const app = express();
+const cors = require("cors");
+const uuid = require("uuidv4");
+const uniqueId = uuid();
+
+app.use(cors());
 
 app.use(express.json());
 
@@ -358,6 +363,12 @@ const videos = [
   }
 ];
 
+function generateUniqueId() {
+  return Math.random()
+    .toString(36)
+    .substr(2, 9);
+}
+
 app.get("/", (req, res) => {
   res.json(videos);
 });
@@ -377,63 +388,31 @@ app.get("/videos/:video", (req, res) => {
   }
 });
 
-// create a new comment
-
-// app
-//   .post(`http://localhost:5000/videos/`, {
-//     name: name,
-//     comment: comment
-//   })
-//   .then(response => {
-//     comments.push(response.data);
-//   })
-//   .catch(error => {
-//     console.log("404 error");
-//   });
-
-//  Create new video
-// app.post("/", (req, res) => {
-//   const newVideo = {
-//     id: helper.getNewId(videos),
-//     title: req.body.title,
-//     description: req.body.description,
-//   };
-//   if (!newVideo.title || !newVideo.description) {
-//     return res.status(400).json({
-//       errorMessage: "Please provide title and description for new video"
-//     });
-//   }
-//   videos.push(newVideo);
-//   // console.log(JSON.stringify(videos));
-//   helper.writeJSONFile(fileName, videos);
-//   res.json(videos);
-// });
-
-addVideo = video => {
-  let title = title;
-  let channel = channel;
-  let description = description;
-  let image = image;
-  const newVideo = {
-    title: title,
-    channel: channel,
-    description: description,
-    image: image,
+app.post("/videos", (req, res) => {
+  let newVideo = {
+    id: generateUniqueId(),
+    title: req.body.title,
+    channel: "Timothy Austin",
+    description: req.body.description,
+    image: "https://i.imgur.com/l2Xfgpl.jpg",
     timestamp: new Date(),
     views: 0,
     likes: 0,
-    commentsT: 0
+    commentsT: []
   };
+  videos.push(newVideo);
+});
 
-  this.state.videos.push(newVideo);
 
-  return this.setState({
-    videos: {
-      ...this.state.videos,
-      videos: this.state.videos
-    }
-  });
+app.post("/videos/:video", (req, res) => {
+let newComment= {
+      name: "Mohan",
+      comment: "req.body.commentinput",
+      id: uuid(),
+      timestamp: new Date()
 };
+console.log(newComment)
+});
 
 app.listen(5000, (req, res) => {
   console.log("Listening... on 5000");

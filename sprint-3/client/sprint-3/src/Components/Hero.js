@@ -8,38 +8,36 @@ class Hero extends React.Component {
   render() {
     const singleVid = this.props.singleVid;
     return (
-      <>
         <div className="hero">
           <div className="hero__video">
             <div className="hero__container">
               <div className="video__icons">
                 <div className="play">
-                  <img src={Play} />
+                  <img src={Play} alt="Play"/>
                 </div>
 
                 <div className="progressbar">
-                  <img src={Scrubber} id="scrubber" />
+                  <img src={Scrubber} id="scrubber" alt="scrubber"/>
 
                   <div className="progressbar__line" />
                   <p> 0:00 /0:42</p>
                 </div>
                 <div className="fullscreen">
-                  <img src={Fullscreen} />
+                  <img src={Fullscreen} alt="Fullscreen"/>
                 </div>
                 <div className="volume">
-                  <img src={Volume} />
+                  <img src={Volume}  alt="Volume"/>
                 </div>
               </div>
 
               <div className="bigVid">
                 <video width="100%" poster={singleVid.image}>
-                  <source src="" type="video/mp4" />
+                  <source src="" type="video/mp4" alt="video"/>
                 </video>
               </div>
             </div>
           </div>
         </div>
-      </>
     );
   }
 }

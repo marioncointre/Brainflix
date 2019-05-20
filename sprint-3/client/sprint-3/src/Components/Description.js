@@ -14,7 +14,6 @@ class Description extends React.Component {
       dateStamp.getFullYear();
 
     return (
-      <>
         <div className="intro">
           <div className="info">
             <h1>{singleVid.title}</h1>
@@ -25,11 +24,11 @@ class Description extends React.Component {
               </div>
               <div className="stats">
                 <div className="views">
-                  <img src={views} />
+                  <img src={views} alt="views"/>
                   <p>{singleVid.views}</p>
                 </div>
                 <div className="likes">
-                  <img src={likes} />
+                  <img src={likes} alt="likes"/>
                   <p>{singleVid.likes}</p>
                 </div>
               </div>
@@ -40,7 +39,6 @@ class Description extends React.Component {
             <p>{singleVid.description}</p>
           </div>
         </div>
-      </>
     );
   }
 }

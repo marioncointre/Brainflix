@@ -19,7 +19,7 @@ class CommentForm extends React.Component {
             <h4>JOIN THE CONVERSATION </h4>
           </div>
           <div className="form__input">
-            <img src={Mohan} />
+            <img src={Mohan} alt="Mohan"/>
             <form
               onSubmit={submitHandler}
               id="myForm"

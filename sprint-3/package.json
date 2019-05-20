@@ -6,9 +6,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "node": "^12.2.0",
-    "nodemon": "^1.19.0"
+    "nodemon": "^1.19.0",
+    "uuidv4": "^4.0.0"
   },
   "devDependencies": {},
   "scripts": {

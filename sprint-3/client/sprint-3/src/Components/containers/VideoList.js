@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 function VideoList(props) {
   const { videos } = props;
-  const videoList = videos.map(video => {
+  const videoList = videos.map((video, key) => {
     return (
-      <div>
+      <div key={key}>
         <Link to={`/videos/${video.id}`}>
           <div className="video">
             <div className="video__image">
-              <img src={video.image} />
+              <img src={video.image} alt="video"/>
             </div>
             <div className="video__content">
               <div className="video__title">{video.title}</div>

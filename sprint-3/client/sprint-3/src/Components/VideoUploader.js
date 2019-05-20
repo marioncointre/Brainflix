@@ -24,37 +24,31 @@ class VideoUploader extends React.Component {
 
 function VideoThumbnail() {
   return (
-    <>
       <div className="video__example">
         <label>VIDEO THUMBNAIL</label>
-        <img src={preview} />
+        <img src={preview} alt="preview"/>
       </div>
-    </>
   );
 }
 
 function VideoForm(props) {
   const submitHandler = event => {
     event.preventDefault();
-    const eventform = event.target;
-    console.log(eventform.videotitle.value);
-  };
+    const eventtitle = event.target.videotitle;
+    const eventdescr = event.target.videodescription;
+    // console.log(eventtitle.value);
+    // console.log(eventdescr.value);
 
-  const videos = props.videos;
-  const newvideo = props.newvideo;
-  console.log(newvideo);
-  axios
-    .post("/", {
-      newvideo: newvideo
-    })
-    .then(response => {
-      videos.push(newvideo);
-      console.log(videos);
-    })
-    .catch(error => {
-      console.log("404 error");
+    axios.post("http://localhost:5000/videos/", {
+      title: eventtitle.value, //body of request
+      description: eventdescr.value
     });
+eventtitle.value = "";
+eventdescr.value = "";
 
+
+
+  };
   return (
     <>
       <form onSubmit={submitHandler}>

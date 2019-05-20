@@ -4,28 +4,24 @@ import uploadIcon from "../assets/Icons/SVG/Icon-upload.svg";
 import logo from "../assets/Logo/Logo-brainflix.svg";
 import Mohan from "../assets/Images/Mohan-muruge.jpg";
 
-function Header(props) {
-  console.log(props);
+function Header() {
   return (
     <div className="nav">
       <div className="logo">
         <Link to="/">
-          <img src={logo} />
+          <img src={logo} alt="Branflix"/>
         </Link>
       </div>
       <input type="text" name="search" id="search" placeholder="Search" />
       <div className="upload">
         <button className="button">
           <Link
-            to="/upload-video"
-            videos={props.videos}
-            addVideo={props.addVideo}
-            >
+            to="/upload-video">
             
-            <img src={uploadIcon} /> UPLOAD
+            <img src={uploadIcon} alt="Upload"/> UPLOAD
           </Link>
         </button>
-        <img src={Mohan} className="icon" />
+        <img src={Mohan} className="icon" alt="Mohan"/>
       </div>
     </div>
   );
