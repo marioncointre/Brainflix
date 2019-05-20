@@ -5,60 +5,77 @@
   margin-right: 16px;
 
   &__title {
-    font-weight: $font-bold;
+    margin-top: 40px;
     margin-bottom: 32px;
-    font-family: "Avenir";
+
+    h2 {
+      font-weight: $font-bold;
+      font-family: "Avenir";
+      font-size: 24px;
+    }
   }
 
   h4 {
     color: $silver-color;
   }
-
-  .form {
-    @include row;
-    align-items: center;
-    border-bottom: 1px solid $mercury-color;
-    padding-bottom: 24px;
-
-    img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      align-self: flex-start;
-    }
-
-    #myForm {
+  &__fields {
+    .form {
       @include column;
       align-items: center;
+      border-bottom: 1px solid $mercury-color;
+      padding-bottom: 24px;
       width: 100%;
-      margin-left: 16px;
 
-      .formComment {
-        width: 100%;
-        margin-bottom: 16px;
-
-        textarea {
-          border: 2px solid $brainflix-blue;
-          border-radius: 4px;
-          width: 100%;
-          height: 100px;
-
-          &::placeholder {
-            padding-top: 15px;
-          }
+      &__title {
+        h4 {
+          align-self: flex-start;
         }
       }
-
-      button {
-        background-color: $brainflix-blue;
-        color: $primary-color;
-        font-weight: $font-bold;
-        border-radius: 4px;
-        font-family: "Avenir";
-        font-size: 14px;
-        height: 48px;
+      &__input {
+        @include row;
         width: 100%;
-        margin-bottom: 24px;
+      }
+
+      img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        align-self: flex-start;
+      }
+
+      #myForm {
+        @include column;
+        align-items: center;
+        width: 100%;
+        margin-left: 16px;
+
+        .formComment {
+          width: 100%;
+          margin-bottom: 16px;
+
+          textarea {
+            border: 2px solid $brainflix-blue;
+            border-radius: 4px;
+            width: 100%;
+            height: 100px;
+
+            &::placeholder {
+              padding-top: 15px;
+            }
+          }
+        }
+
+        button {
+          background-color: $brainflix-blue;
+          color: $primary-color;
+          font-weight: $font-bold;
+          border-radius: 4px;
+          font-family: "Avenir";
+          font-size: 14px;
+          height: 48px;
+          width: 100%;
+          margin-bottom: 24px;
+        }
       }
     }
   }
@@ -109,45 +126,55 @@
 @media (min-width: 768px) {
   .comments {
     @include column;
-    align-items: center;
     margin-left: 24px;
     margin-right: 24px;
 
-    &__title,
-    h4 {
+    &__title {
       align-self: flex-start;
     }
 
-    h4 {
-      margin-left: 72px;
-    }
+    &__fields {
+      align-items: flex-start;
+      @include column;
 
-    .form {
-      margin-right: 40px;
-      margin-left: 16px;
+      .form {
+        margin-right: 40px;
+        margin-left: 16px;
+        @include column;
+        align-items: flex-start;
 
-      #myForm {
-        flex-direction: row;
-
-        .formComment {
-          margin-right: 16px;
-          margin-bottom: 0;
-          width: 440px;
-
-          textarea {
-            height: 48px;
-            margin-right: 16px;
-            box-sizing: border-box;
+        &__title {
+          h4 {
+            align-self: flex-start;
           }
         }
+        &__input {
+          @include row;
+        }
 
-        button {
-          width: 160px;
-          margin-bottom: 0;
+        #myForm {
+          flex-direction: row;
+
+          .formComment {
+            margin-right: 16px;
+            margin-bottom: 0;
+            width: 440px;
+            height: 48px;
+
+            textarea {
+              height: 48px;
+              margin-right: 16px;
+              box-sizing: border-box;
+            }
+          }
+
+          button {
+            width: 160px;
+            margin-bottom: 0;
+          }
         }
       }
     }
-
     &__table {
       @include column;
       justify-content: center;

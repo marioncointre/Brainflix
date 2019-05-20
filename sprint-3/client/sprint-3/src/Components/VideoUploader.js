@@ -1,9 +1,12 @@
 import React from "react";
+import axios from "axios";
 import Header from "./Header";
 import preview from "../assets/Images/Upload-video-preview.jpg";
 
 class VideoUploader extends React.Component {
-  render() {
+  render(props) {
+    console.log(props);
+    console.log(this.props);
     return (
       <>
         <Header />
@@ -11,7 +14,7 @@ class VideoUploader extends React.Component {
           <h1>Upload Video</h1>
           <div className="video__content">
             <VideoThumbnail />
-            <VideoForm />
+            <VideoForm addVideo={this.props} />
           </div>
         </div>
       </>
@@ -30,10 +33,31 @@ function VideoThumbnail() {
   );
 }
 
-function VideoForm() {
+function VideoForm(props) {
+  const submitHandler = event => {
+    event.preventDefault();
+    const eventform = event.target;
+    console.log(eventform.videotitle.value);
+  };
+
+  const videos = props.videos;
+  const newvideo = props.newvideo;
+  console.log(newvideo);
+  axios
+    .post("/", {
+      newvideo: newvideo
+    })
+    .then(response => {
+      videos.push(newvideo);
+      console.log(videos);
+    })
+    .catch(error => {
+      console.log("404 error");
+    });
+
   return (
     <>
-      <form>
+      <form onSubmit={submitHandler}>
         <label>Title your video</label>
         <input
           type="text"
@@ -48,12 +72,8 @@ function VideoForm() {
           placeholder="Add a description of your video"
         />
         <div className="form__buttons">
-          <button type="button" id="publish">
-            PUBLISH
-          </button>
-          <button type="button" id="cancel">
-            CANCEL
-          </button>
+          <button id="publish">PUBLISH</button>
+          <button id="cancel">CANCEL</button>
         </div>
       </form>
     </>

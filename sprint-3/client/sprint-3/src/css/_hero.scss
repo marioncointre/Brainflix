@@ -19,13 +19,14 @@
       }
     }
     .video__icons {
+      @include row;
       padding-left: 5%;
       padding-right: 5%;
-      @include row;
-      top: 80%;
+      bottom: 13px;
       position: absolute;
       z-index: 1;
-      align-items: center;
+      justify-content: center;
+      // width: 95%;
     }
 
     .play,
@@ -87,14 +88,14 @@
         line-height: 0;
 
         video {
-          min-height: 400px;
-          width: 700px;
+          width: 944px;
+          height: 540px;
+          object-fit: initial;
         }
       }
       .video__icons {
         padding-left: 1%;
         padding-right: 1%;
-        top: 90%;
       }
 
       .play {
@@ -108,12 +109,12 @@
       }
 
       .progressbar {
-        width: 519px;
+        min-width: 519px;
         margin-right: 16px;
 
         &__line {
           height: 5px;
-          width: 85%;
+          // width: 85%;
           background-color: black;
           z-index: 2;
         }
@@ -148,6 +149,7 @@
         padding-left: 2%;
         padding-right: 2%;
         top: 90%;
+        width: 95%;
       }
 
       .progressbar {

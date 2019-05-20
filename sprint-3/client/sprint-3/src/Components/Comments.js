@@ -16,10 +16,13 @@ class Comments extends React.Component {
     return (
       <>
         <div className="comments">
-          <div className="comments__title">{commentsNb} Comments</div>
-          <h4>JOIN THE CONVERSATION </h4>
-          <CommentForm updatecoms={this.props.updatecoms} />
-          <CommentList commentsContent={commentsContent} />
+          <div className="comments__title">
+            <h2>{commentsNb} Comments</h2>
+          </div>
+          <div className="comments__fields">
+            <CommentForm updatecoms={this.props.updatecoms} />
+            <CommentList commentsContent={commentsContent} />
+          </div>
         </div>
       </>
     );
@@ -28,7 +31,15 @@ class Comments extends React.Component {
 const CommentList = props => {
   const { commentsContent } = props;
   console.log(commentsContent);
+
   const commentslist = commentsContent.map(com => {
+    let dateStamp = new Date(com.timestamp);
+    dateStamp =
+      dateStamp.getDate() +
+      "/" +
+      (dateStamp.getMonth() + 1) +
+      "/" +
+      dateStamp.getFullYear();
     if (Object.keys(CommentList).length !== 0);
     return (
       <>
@@ -39,7 +50,7 @@ const CommentList = props => {
             </div>
             <div className="published__body">
               <p className="username">{com.name}</p>
-              <p className="date">{com.timestamp}</p>
+              <p className="date">{dateStamp}</p>
               <div className="input">{com.comment}</div>
             </div>
           </div>

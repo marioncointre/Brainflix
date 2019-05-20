@@ -154,7 +154,7 @@ a {
 }
 
 .nav .logo img {
-  height: 30px;
+  height: 24px;
 }
 
 .nav #search {
@@ -291,8 +291,6 @@ a {
 }
 
 .hero__video .video__icons {
-  padding-left: 5%;
-  padding-right: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,12 +298,14 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  top: 80%;
+  padding-left: 5%;
+  padding-right: 5%;
+  bottom: 13px;
   position: absolute;
   z-index: 1;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .hero__video .play,
@@ -386,13 +386,14 @@ a {
     line-height: 0;
   }
   .hero__video .bigVid video {
-    min-height: 400px;
-    width: 700px;
+    width: 944px;
+    height: 540px;
+    -o-object-fit: initial;
+       object-fit: initial;
   }
   .hero__video .video__icons {
     padding-left: 1%;
     padding-right: 1%;
-    top: 90%;
   }
   .hero__video .play {
     margin-right: 16px;
@@ -403,12 +404,11 @@ a {
     padding-right: 10px;
   }
   .hero__video .progressbar {
-    width: 519px;
+    min-width: 519px;
     margin-right: 16px;
   }
   .hero__video .progressbar__line {
     height: 5px;
-    width: 85%;
     background-color: black;
     z-index: 2;
   }
@@ -437,6 +437,7 @@ a {
     padding-left: 2%;
     padding-right: 2%;
     top: 90%;
+    width: 95%;
   }
   .hero__video .progressbar {
     width: 751px;
@@ -731,16 +732,42 @@ a {
 }
 
 .comments__title {
-  font-weight: bold;
+  margin-top: 40px;
   margin-bottom: 32px;
+}
+
+.comments__title h2 {
+  font-weight: bold;
   font-family: "Avenir";
+  font-size: 24px;
 }
 
 .comments h4 {
   color: #AFAFAF;
 }
 
-.comments .form {
+.comments__fields .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #E1E1E1;
+  padding-bottom: 24px;
+  width: 100%;
+}
+
+.comments__fields .form__title h4 {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.comments__fields .form__input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -748,14 +775,10 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-bottom: 1px solid #E1E1E1;
-  padding-bottom: 24px;
+  width: 100%;
 }
 
-.comments .form img {
+.comments__fields .form img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -763,7 +786,7 @@ a {
       align-self: flex-start;
 }
 
-.comments .form #myForm {
+.comments__fields .form #myForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -778,35 +801,35 @@ a {
   margin-left: 16px;
 }
 
-.comments .form #myForm .formComment {
+.comments__fields .form #myForm .formComment {
   width: 100%;
   margin-bottom: 16px;
 }
 
-.comments .form #myForm .formComment textarea {
+.comments__fields .form #myForm .formComment textarea {
   border: 2px solid #0095FF;
   border-radius: 4px;
   width: 100%;
   height: 100px;
 }
 
-.comments .form #myForm .formComment textarea::-webkit-input-placeholder {
+.comments__fields .form #myForm .formComment textarea::-webkit-input-placeholder {
   padding-top: 15px;
 }
 
-.comments .form #myForm .formComment textarea:-ms-input-placeholder {
+.comments__fields .form #myForm .formComment textarea:-ms-input-placeholder {
   padding-top: 15px;
 }
 
-.comments .form #myForm .formComment textarea::-ms-input-placeholder {
+.comments__fields .form #myForm .formComment textarea::-ms-input-placeholder {
   padding-top: 15px;
 }
 
-.comments .form #myForm .formComment textarea::placeholder {
+.comments__fields .form #myForm .formComment textarea::placeholder {
   padding-top: 15px;
 }
 
-.comments .form #myForm button {
+.comments__fields .form #myForm button {
   background-color: #0095FF;
   color: #ffffff;
   font-weight: bold;
@@ -905,42 +928,71 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     margin-left: 24px;
     margin-right: 24px;
   }
-  .comments__title,
-  .comments h4 {
+  .comments__title {
     -ms-flex-item-align: start;
         align-self: flex-start;
   }
-  .comments h4 {
-    margin-left: 72px;
+  .comments__fields {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  .comments .form {
+  .comments__fields .form {
     margin-right: 40px;
     margin-left: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
-  .comments .form #myForm {
+  .comments__fields .form__title h4 {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .comments__fields .form__input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .comments .form #myForm .formComment {
+  .comments__fields .form #myForm {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .comments__fields .form #myForm .formComment {
     margin-right: 16px;
     margin-bottom: 0;
     width: 440px;
+    height: 48px;
   }
-  .comments .form #myForm .formComment textarea {
+  .comments__fields .form #myForm .formComment textarea {
     height: 48px;
     margin-right: 16px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  .comments .form #myForm button {
+  .comments__fields .form #myForm button {
     width: 160px;
     margin-bottom: 0;
   }

@@ -15,22 +15,27 @@ class CommentForm extends React.Component {
     return (
       <>
         <div className="form">
-          <img src={Mohan} />
-          <form
-            onSubmit={submitHandler}
-            id="myForm"
-            action="submit"
-            method="post"
-          >
-            <div className="formComment">
-              <textarea
-                name="Comment"
-                id="Comment"
-                placeholder=" That was easily the most spectacular BMX moment ever."
-              />
-            </div>
-            <button id="Btn">COMMENT</button>
-          </form>
+          <div className="form__title">
+            <h4>JOIN THE CONVERSATION </h4>
+          </div>
+          <div className="form__input">
+            <img src={Mohan} />
+            <form
+              onSubmit={submitHandler}
+              id="myForm"
+              action="submit"
+              method="post"
+            >
+              <div className="formComment">
+                <textarea
+                  name="Comment"
+                  id="Comment"
+                  placeholder=" That was easily the most spectacular BMX moment ever."
+                />
+              </div>
+              <button id="Btn">COMMENT</button>
+            </form>
+          </div>
         </div>
       </>
     );
@@ -38,9 +43,8 @@ class CommentForm extends React.Component {
 }
 // function createComment(comment) {
 //   axios
-//     .post("https://project-1-api.herokuapp.com/comments?api_key=authkey", {
-//       name: name,
-//       comment: comment
+//     .post(`http://localhost:5000/videos/${this.props.videoid}` {
+//       comment: comment,
 //     })
 //     .then(response => {
 //       comments.push(response.data);
