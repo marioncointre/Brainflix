@@ -7,13 +7,33 @@ import Scrubber from "../assets/Icons/SVG/Icon-scrubber-control.svg";
 class Hero extends React.Component {
   render() {
     const singleVid = this.props.singleVid;
+    // let playing = false;
+    // const Player = 
+
+    function playpause (){
+    //   if (playing) {
+    //   Player.pause()
+    //   }
+    //   else {
+    //     Player.play();
+    //   }
+    // };
+    // Player.onplaying = function(){
+    //   playing = true;
+    // };
+    // Player.onpause = function(){
+    //   playing = false;
+    // };
+      console.log('receivedx@')
+        }
+    //     }
     return (
         <div className="hero">
           <div className="hero__video">
             <div className="hero__container">
               <div className="video__icons">
                 <div className="play">
-                  <img src={Play} alt="Play"/>
+                  <img src={Play} alt="Play" id="Player" onClick={playpause()}/>
                 </div>
 
                 <div className="progressbar">
@@ -31,7 +51,7 @@ class Hero extends React.Component {
               </div>
 
               <div className="bigVid">
-                <video width="100%" poster={singleVid.image}>
+                <video width="100%" poster={singleVid.image} c> 
                   <source src="" type="video/mp4" alt="video"/>
                 </video>
               </div>

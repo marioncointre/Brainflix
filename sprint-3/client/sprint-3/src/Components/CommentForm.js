@@ -3,12 +3,13 @@ import axios from "axios";
 import Mohan from "../assets/Images/Mohan-muruge.jpg";
 
 class CommentForm extends React.Component {
+  videoid = this.props.videoid
   render() {
     const submitHandler = event => {
       event.preventDefault();
       const evtcomment = event.target.cominput;
 
-          axios.post("http://localhost:5000/videos/:video/comments", {
+          axios.post(`http://localhost:5000/videos/${this.props.videoid}`, {
             comment: evtcomment.value
           });
     evtcomment.value = "";

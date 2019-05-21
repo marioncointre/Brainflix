@@ -15,7 +15,8 @@ class Comments extends React.Component {
             <h2>{commentsNb} Comments</h2>
           </div>
           <div className="comments__fields">
-            <CommentForm updatecoms={this.props.updatecoms} />
+            <CommentForm videoid={this.props.videoid} 
+            updatecoms={this.props.updatecoms}/>
             <CommentList commentsContent={commentsContent} />
           </div>
         </div>

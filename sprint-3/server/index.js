@@ -8,7 +8,7 @@ const uniqueId = uuid();
 app.use(cors());
 app.use(express.json());
 
-//data 
+//data
 const videos = [
   {
     id: "1af0jruup5gu",
@@ -369,7 +369,6 @@ function generateUniqueId() {
     .substr(2, 9);
 }
 
-
 // get routes
 app.get("/", (req, res) => {
   res.json(videos);
@@ -397,7 +396,8 @@ app.post("/videos", (req, res) => {
     title: req.body.title,
     channel: "Timothy Austin",
     description: req.body.description,
-    image: "https://i.imgur.com/l2Xfgpl.jpg",
+    image:
+      "http://localhost:3000/static/media/Upload-video-preview.c814c81c.jpg",
     timestamp: new Date(),
     views: 0,
     likes: 0,
@@ -406,22 +406,24 @@ app.post("/videos", (req, res) => {
   videos.push(newVideo);
 });
 
+app.post("/videos/:video", (req, res) => {
+  let newComment = {
+    name: "Mohan",
+    comment: req.body.comment,
+    id: uuid(),
+    likes: 0,
+    timestamp: new Date()
+  };
 
-app.post("/videos/:video/comments", (req, res) => {
-let newComment= {
-      name: "Mohan",
-      comment: req.body.comment,
-      id: uuid(),
-      likes: 0,
-      timestamp: new Date()
-};
-console.log(newComment)
-console.log(videos[0].comments)
-  videos[0].comments.push(newComment);
-  videos[0].comments.push(newComment);
-
+  const videofound = videos.find(video => {
+    if (video.id === req.params.video) {
+      video.comments.push(newComment);
+      // return video.comments;
+      // res.send(video.comments);
+    }
+    console.log(video.id.comments);
+  });
 });
-
 
 // listening
 app.listen(5000, (req, res) => {

@@ -22,6 +22,7 @@ class App extends React.Component {
     }
   };
 
+
   componentDidMount() {
     axios
       .get(`http://localhost:5000/`)
@@ -79,24 +80,25 @@ class App extends React.Component {
         });
     }
   }
+  
+   updatecoms = comment => {
+    const newComment = {
+      comment: comment,
+      id: "",
+      likes: 0,
+      name: "Mohan",
+      timestamp: new Date()
+    };
+    this.state.singleVid.commentsT.push(newComment);
 
-  // updatecoms = comment => {
-  //   const newComment = {
-  //     comment: comment,
-  //     id: "",
-  //     likes: 0,
-  //     name: "Mohan",
-  //     timestamp: new Date()
-  //   };
-  //   this.state.singleVid.commentsT.push(newComment);
+    return this.setState({
+      singleVid: {
+        ...this.state.singleVid,
+        commentsT: this.state.singleVid.commentsT
+      }
+    });
+  };
 
-  //   return this.setState({
-  //     singleVid: {
-  //       ...this.state.singleVid,
-  //       commentsT: this.state.singleVid.commentsT
-  //     }
-  //   });
-  // };
 
   render() {
     return (
@@ -108,7 +110,8 @@ class App extends React.Component {
               <Description singleVid={this.state.singleVid} />
               <Comments
                 commentsT={this.state.singleVid.commentsT}
-                updatecoms={this.updatecoms}
+                videoid={this.props.videoid}
+                updatecoms= {this.state.updatecoms}
               />
             </div>
             <VideoList
