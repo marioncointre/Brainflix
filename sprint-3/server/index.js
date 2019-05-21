@@ -418,10 +418,8 @@ app.post("/videos/:video", (req, res) => {
   const videofound = videos.find(video => {
     if (video.id === req.params.video) {
       video.comments.push(newComment);
-      // return video.comments;
-      // res.send(video.comments);
+      res.send(video.comments);
     }
-    console.log(video.id.comments);
   });
 });
 

@@ -20,14 +20,13 @@
     }
     .video__icons {
       @include row;
-      padding-left: 5%;
-      padding-right: 5%;
+      padding-left: 1%;
+      padding-right: 1%;
       bottom: 13px;
       position: absolute;
       z-index: 1;
       justify-content: center;
-      // width: 95%;
-      cursor: pointer;
+      align-items: center;
     }
 
     .play,
@@ -89,9 +88,9 @@
         line-height: 0;
 
         video {
-          width: 944px;
-          height: 540px;
-          object-fit: initial;
+          width: 700px;
+          min-height: 400px;
+          // object-fit: initial;
         }
       }
       .video__icons {
@@ -110,19 +109,19 @@
       }
 
       .progressbar {
-        min-width: 519px;
+        width: 519px;
         margin-right: 16px;
 
         &__line {
           height: 5px;
-          // width: 85%;
+          width: 80%;
           background-color: black;
           z-index: 2;
         }
         p {
           display: unset;
           color: white;
-          font-size: 10px;
+          font-size: 8px;
           font-weight: $font-demibold;
           padding-left: 10px;
         }
