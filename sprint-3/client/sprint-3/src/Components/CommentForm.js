@@ -6,14 +6,13 @@ class CommentForm extends React.Component {
   videoid = this.props.videoid;
   render() {
     const submitHandler = event => {
-      // event.preventDefault();
+      event.preventDefault();
       const evtcomment = event.target.cominput;
 
       axios.post(`http://localhost:5000/videos/${this.props.videoid}`, {
         comment: evtcomment.value
       });
       evtcomment.value = "";
-      // window.location.reload();
     };
 
     return (
